@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="despesa.css">
+    <title>Despesa</title>
+  </head>
+  <body>
+    <header>
+        <span class="receita receita-despesa-transferencia">Receita</span>
+        <span class="despesa receita-despesa-transferencia">Despesa</span>
+        <span class="transferencia receita-despesa-transferencia">Trasnferência</span>
+    </header>
+    <section class="container-despesa">
+            <div class='box-total'>
+                    <img src='delete (1).png' class='botao-excluir'></img>
+                    <span class='valor-total'><p class='cifrao'>R$</p> 100.000,00</span>
+                </div>
+                <div class="box-carteira">
+                    <div class='box-icone-carteira'>
+                        <img src="bill.png" class='icone-carteira'>
+                    </div>
+                    <div class="wrap-carteira-nome">
+                        <span class="text-carteira">Carteira</span>
+                        <span class='text-nome'>Nome</span>
+                    </div>
+                    <span class="text-valor">R$ 100.000,00</span>
+                </div>
+                <div class="box-carteira">
+                        <div class='box-icone-carteira'>
+                            <img src="bill.png" class='icone-carteira'>
+                        </div>
+                        <div class="wrap-carteira-nome">
+                            <span class="text-carteira">Carteira</span>
+                            <span class='text-nome'>Nome</span>
+                        </div>
+                        <span class="text-valor">R$ 100.000,00</span>
+                    </div>
+            <div class='data'>
+                <span class='text-data'>Data</span>
+                <input type="date" class='campo-data'>
+            </div>
+            <div class="parcelas">
+                <span class='text-parcelas'>Parcelas</span>
+                <div class='campo-parcelas'>
+                    <span class='text-quantidade-parcelas'>1 vez</span>
+                </div>
+                <div class="wrap-checkbox-parcelas">
+                    <div class='checkbox-parcelas'></div>
+                    <span class='text-checkbox-parcelas'>Dividir valor</span>
+                </div>
+            </div>
+            <div class='campo-tags'>
+                    <span class='text-tag'>Urgente <img src="delete (2).png" class='img-delete-tag'></span>
+                    <span class='text-tag'>Crédito <img src="delete (2).png" class='img-delete-tag'></span>
+                    <span class='text-adicionar-tag'>Adicionar +</span>
+            </div>
+            <input type='text' class='obs' placeholder="Obs...">
+            <button class='botao-confirmar'>Confirmar</button>
+    </section>
+    <script src="despesa.js"></script>
+  </body>
+</html>
