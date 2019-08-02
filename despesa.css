@@ -118,6 +118,21 @@ header{
     font-size: 1.2em;
     color: var(--primary);
 }
+.add-carteira{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--primary);
+    font-size: 2em;
+    padding: .2rem;
+    background-color: #fff;
+    border-radius: 100em;
+    transform: translateX(3em);
+    width: 2rem;
+    height: 2rem;
+    font-weight: 1000;
+
+}
 .text-carteira{
     font-weight: 800;
     margin-bottom: .2em;

@@ -1,6 +1,9 @@
 const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
-const $botaoDiscador = document.querySelector('botao-discador');
+const icone4 = document.querySelector('.icone-4');
+
+let $discador;
+let $continuarDiscador;
 
 const criarDiscador = () => {
   const containerDiscador = document.createElement("section");
@@ -40,6 +43,9 @@ const criarDiscador = () => {
   containerDiscador.appendChild(criarBotoesDiscador());
   containerDiscador.appendChild(botaoContinuar);
   container.appendChild(containerDiscador);
+
+  $discador = [...document.querySelectorAll('.numero-discador')];
+  $continuarDiscador = document.querySelector('.botao-discador');
 };
 
 botaoAdd.addEventListener("click", e => {
@@ -70,17 +76,20 @@ const criarBotoesDiscador = () => {
   discador.appendChild(botaoDiscador);
   discador.appendChild(backspace);
 
+
   return discador;
 };
 
 
 container.addEventListener('click', e =>{
     if (e.target.classList.contains('numero-discador')){
-        console.log(e.target.classList)
+        console.log($continuarDiscador)
+        criarPaginaDespesa();
+
     };
 })
 
-const criarPaginaDespesa = () =>{
+const criarPaginaDespesa = () =>{   
     const containerDespesa = document.createElement("section");
     containerDespesa.classList.add("container-discador");
   
@@ -102,13 +111,59 @@ const criarPaginaDespesa = () =>{
     trasnferencia.classList.add("receita-despesa-transferencia");
     trasnferencia.textContent = "Trasnferência";
 
+    const boxTotal = document.createElement('div');
+    boxTotal.classList.add('box-total');
+
+    const excluirTotal = document.createElement('img');
+    excluirTotal.setAttribute('src', 'delete (1).png');
+    excluirTotal.classList.add('botao-excluir');
+
+    const valorTotal = document.createElement('span');
+    valorTotal.classList.add('valor-total');
+
+    const boxCarteira = document.createElement('div');
+    boxCarteira.classList.add('box-carteira');
+
+    const boxIcone = document.createElement('div');
+    boxIcone.classList.add('box-icone-despesa');
+    
+    const iconeCarteira = document.createElement('img');
+    iconeCarteira.setAttribute('src', 'bill.png')
+    iconeCarteira.classList.add('icone-carteira');
+
+    const wrapCarteiraNome = document.createElement('div');
+    wrapCarteiraNome.classList.add('wrap-carteira-nome');
+
+    const textCarteira = document.createElement('span');
+    textCarteira.classList.add('text-carteira');
+
+    const textNome = document.createElement('span');
+    textNome.classList.add('text-nome');
+
+    const textValor = document.createElement('span');
+    textValor.classList.add('text-valor');
+
+
+    container.appendChild(containerDespesa);
+    containerDespesa.appendChild(boxTotal);
+    containerDespesa.appendChild(boxCarteira);
+    boxCarteira.appendChild(boxIcone);
+    boxCarteira.appendChild(textValor);
+    boxCarteira.appendChild(boxIcone);
+    boxCarteira.appendChild(wrapCarteiraNome);
+    wrapCarteiraNome.appendChild(textCarteira);
+    wrapCarteiraNome.appendChild(textNome);
+    boxIcone.appendChild(iconeCarteira);
+    boxTotal.appendChild(valorTotal);
+    boxTotal.appendChild(excluirTotal);
+    containerDespesa.appendChild(cabecalho);
     cabecalho.appendChild(receita);
     cabecalho.appendChild(despesa);
     cabecalho.appendChild(trasnferencia);
 }
 
-$botaoDiscador.addEventListener('click', e =>{
-
+icone4.addEventListener('click', e=>{
+    console.log('a');
     criarPaginaDespesa();
 })
 
