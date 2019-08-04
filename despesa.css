@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  font-family: 'Lato', sans-serif;
   height: 100vh;
 }
 header{
@@ -78,6 +79,57 @@ header{
     align-items: center;
     margin-bottom: 1em;
 }
+.cadastro-carteira{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 20%;
+    position: absolute;
+    width: 95%;
+    height: 30%;
+    background-color: var(--tercearia);
+    border: 1px solid var(--shadow);
+    box-shadow: 3px 3px 3px var(--shadow);
+}
+.fechar-cadastro-carteira{
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+.text-cadastro-carteira{
+    margin: .3rem;
+    font-size: 1.3em;
+}
+.campo-cadastro-carteira{
+    height: 2em;
+    border: 1px solid var(--primary);
+    background-color: var(--secundary);
+    border-radius: 1em;
+}
+.icone-cadastro-carteira{
+    align-self: center;
+    position: absolute;
+    top: -12.5%;
+    right: 38%;
+    left: 38%;
+    
+}
+.botao-salvar-cadastro-carteira{
+    margin-top: 1.5rem;
+    width: 35%;
+    height: 2.3rem;
+    border:none;
+    box-shadow: 2px 2px 2px var(--shadow);
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 1em;
+    font-size: 1.3em;
+}
+
+
 .icone-carteira{
     width: 1.8em;
     height: 1.8em;
