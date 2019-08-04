@@ -2,6 +2,44 @@ const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
 const icone4 = document.querySelector('.icone-4');
 
+// Criadores de elementos v
+
+const criarBotao = (conteudo, ...classe) =>{
+  const botao = document.createElement('button');
+  [...classe].map(item => botao.classList.add(item))
+  botao.textContent = conteudo;
+
+  return botao; 
+}
+
+const criarImagem = (imagem, alt, ...classe) =>{
+  const elemento = document.createElement('img');
+  elemento.setAttribute('src', `./${imagem}`)
+  elemento.setAttribute('alt', `${alt}`);
+  [...classe].map(item =>{
+    elemento.classList.add(item);
+  })
+
+  return elemento; 
+}
+
+const criarSpan = (conteudo, ...classe) =>{
+  const elemento = document.createElement('span');
+  elemento.textContent = conteudo;
+  classe[1] ? classe.map(item => elemento.classList.add(item))
+   : elemento.classList.add(classe);
+
+  return elemento; 
+  }
+
+
+//Criadores de elementos ^
+
+
+
+
+
+
 const criarDiscador = () => {
   const containerDiscador = document.createElement("section");
   containerDiscador.classList.add("container-discador");
@@ -9,24 +47,13 @@ const criarDiscador = () => {
   const cabecalho = document.createElement("header");
   cabecalho.classList.add("secoes-cabecalho");
 
-  const receita = document.createElement("span");
-  receita.classList.add("receita");
-  receita.classList.add("receita-despesa-transferencia");
-  receita.textContent = "Receita";
+  const receita = criarSpan('Receita', 'receita', 'receita-despesa-transferencia');
 
-  const despesa = document.createElement("span");
-  despesa.classList.add("despesa");
-  despesa.classList.add("receita-despesa-transferencia");
-  despesa.textContent = "Despesa";
+  const despesa = criarSpan('Despesa', 'despesa', 'receita-despesa-transferencia');
 
-  const trasnferencia = document.createElement("span");
-  trasnferencia.classList.add("transferencia");
-  trasnferencia.classList.add("receita-despesa-transferencia");
-  trasnferencia.textContent = "Trasnferência";
+  const trasnferencia = criarSpan('Transferência', 'transferencia', 'receita-despesa-transferencia');
 
-  const campoValoresDiscador = document.createElement("span");
-  campoValoresDiscador.classList.add("campo-valores-discador");
-  campoValoresDiscador.textContent = "R$ 100.000,00";
+  const campoValoresDiscador = criarSpan('R$ 100.000,00', 'campo-valores-discador');
 
   const botaoContinuar = document.createElement("button");
   botaoContinuar.classList.add("botao-discador");
@@ -45,6 +72,7 @@ const criarDiscador = () => {
   
 };
 
+
 const clickContinuarDiscador = () =>{
   const containerDiscador = document.querySelector('.container-discador');
   container.removeChild(containerDiscador)
@@ -56,22 +84,18 @@ botaoAdd.addEventListener("click", e => {
   criarDiscador();
 });
 
+
+
 const criarBotoesDiscador = () => {
   const discador = document.createElement("div");
   discador.classList.add("discador");
 
   for (let i = 1; i < 10; i++) {
-    const botaoDiscador = document.createElement("span");
-    botaoDiscador.classList.add("numero-discador");
-    botaoDiscador.classList.add(`mumero-discador${i}`);
-    botaoDiscador.textContent = i;
+    const botaoDiscador = criarBotao(i, 'numero-discador', `numero-discador${i}`);
 
     discador.appendChild(botaoDiscador);
   }
-  const botaoDiscador = document.createElement("span");
-  botaoDiscador.classList.add("numero-discador");
-  botaoDiscador.classList.add("numero-discador0");
-  botaoDiscador.textContent = "0";
+  const botaoDiscador = criarBotao(0, 'numero-discador', 'numero-discador0');
 
   const backspace = document.createElement("img");
   backspace.setAttribute("src", "backspace-arrow.png");
@@ -99,35 +123,20 @@ const criarPaginaDespesa = () =>{
     const cabecalho = document.createElement("header");
     cabecalho.classList.add("secoes-cabecalho");
   
-    const receita = document.createElement("span");
-    receita.classList.add("receita");
-    receita.classList.add("receita-despesa-transferencia");
-    receita.textContent = "Receita";
+    const receita = criarSpan('Receita', 'receita', 'receita-despesa-transferencia');
   
-    const despesa = document.createElement("span");
-    despesa.classList.add("despesa");
-    despesa.classList.add("receita-despesa-transferencia");
-    despesa.textContent = "Despesa";
+    const despesa = criarSpan('Despesa', 'despesa', 'receita-despesa-transferencia');
   
-    const trasnferencia = document.createElement("span");
-    trasnferencia.classList.add("transferencia");
-    trasnferencia.classList.add("receita-despesa-transferencia");
-    trasnferencia.textContent = "Trasnferência";
+    const trasnferencia = criarSpan('Transferência', 'transferencia', 'receita-despesa-transferencia');
 
     const boxTotal = document.createElement('div');
     boxTotal.classList.add('box-total');
 
-    const excluirTotal = document.createElement('img');
-    excluirTotal.setAttribute('src', 'delete (1).png');
-    excluirTotal.classList.add('botao-excluir');
+    const excluirTotal = criarImagem('delete (1).png', 'Voltar', 'botao-excluir');
 
-    const cifrao = document.createElement('span');
-    cifrao.classList.add('cifrao');
-    cifrao.textContent = 'R$';
+    const cifrao = criarSpan('R$', 'cifrao');
 
-    const valorTotal = document.createElement('span');
-    valorTotal.classList.add('valor-total');
-    valorTotal.textContent = '100.000,00';
+    const valorTotal = criarSpan('100.000,00', 'valor-total');
 
     const boxCarteira = document.createElement('div');
     boxCarteira.classList.add('box-carteira');
@@ -135,24 +144,16 @@ const criarPaginaDespesa = () =>{
     const boxIcone = document.createElement('div');
     boxIcone.classList.add('box-icone-carteira');
     
-    const iconeCarteira = document.createElement('img');
-    iconeCarteira.setAttribute('src', 'bill.png')
-    iconeCarteira.classList.add('icone-carteira');
+    const iconeCarteira = criarImagem('bill.png', 'Icone da Carteira', 'icone-carteira');
 
     const wrapCarteiraNome = document.createElement('div');
     wrapCarteiraNome.classList.add('wrap-carteira-nome');
 
-    const textCarteira = document.createElement('span');
-    textCarteira.classList.add('text-carteira');
-    textCarteira.textContent = 'Carteira';
+    const textCarteira = criarSpan('Carteira', 'text-carteira');
 
-    const textNome = document.createElement('span');
-    textNome.classList.add('text-nome');
-    textNome.textContent = 'Nome';
+    const textNome = criarSpan('Nome', 'text-nome');
 
-    const textValor = document.createElement('span');
-    textValor.classList.add('text-valor');
-    textValor.textContent = 'R$ 100.000,00'
+    const textValor = criarSpan('R$ 100.000,00', 'text-valor');
 
     const boxCarteiraAdd = document.createElement('div');
     boxCarteiraAdd.classList.add('box-carteira');
@@ -160,31 +161,21 @@ const criarPaginaDespesa = () =>{
     const boxIconeAdd = document.createElement('div');
     boxIconeAdd.classList.add('box-icone-carteira');
     
-    const iconeCarteiraAdd = document.createElement('img');
-    iconeCarteiraAdd.setAttribute('src', 'bill.png')
-    iconeCarteiraAdd.classList.add('icone-carteira');
+    const iconeCarteiraAdd = criarImagem('bill.png', 'Botao Adicionar Carteira', 'icone-carteira');
 
     const wrapCarteiraNomeAdd = document.createElement('div');
     wrapCarteiraNomeAdd.classList.add('wrap-carteira-nome');
 
-    const textCarteiraAdd = document.createElement('span');
-    textCarteiraAdd.classList.add('text-carteira');
-    textCarteiraAdd.textContent = 'Carteira';
+    const textCarteiraAdd = criarSpan('Carteira', 'text-carteira');
 
-    const textNomeAdd = document.createElement('span');
-    textNomeAdd.classList.add('text-nome');
-    textNomeAdd.textContent = 'Nome';
+    const textNomeAdd = criarSpan('Nome', 'text-nome');
 
-    const botaoAdd = document.createElement('span');
-    botaoAdd.classList.add('add-carteira');
-    botaoAdd.textContent = '+';
+    const botaoAdd = criarBotao('+', 'add-carteira');
 
     const dataDespesa = document.createElement('div');
     dataDespesa.classList.add('data');
 
-    const textData = document.createElement('span');
-    textData.classList.add('text-data');
-    textData.textContent = 'Data';
+    const textData = criarSpan('Data', 'text-data');
 
     const campoData = document.createElement('input');
     campoData.setAttribute('type', 'date');
@@ -193,16 +184,12 @@ const criarPaginaDespesa = () =>{
     const boxParcelas = document.createElement('div');
     boxParcelas.classList.add('parcelas');
 
-    const textParcelas = document.createElement('span');
-    textParcelas.classList.add('text-parcelas');
-    textParcelas.textContent = 'Parcelas';
+    const textParcelas = criarSpan('Parcelas', 'text-parcelas');
 
     const campoParcelas = document.createElement('div');
     campoParcelas.classList.add('campo-parcelas');
 
-    const textQuantidadeParcelas = document.createElement('span');
-    textQuantidadeParcelas.classList.add('text-quantidade-parcelas');
-    textQuantidadeParcelas.textContent = '1 vez';
+    const textQuantidadeParcelas = criarSpan('1 vez', 'text-quantidade-parcelas');
 
     const wrapCheckboxParcelas = document.createElement('div');
     wrapCheckboxParcelas.classList.add('wrap-checkbox-parcelas');
@@ -210,34 +197,22 @@ const criarPaginaDespesa = () =>{
     const checkboxParcelas = document.createElement('div');
     checkboxParcelas.classList.add('checkbox-parcelas');
 
-    const textCheckboxParcelas = document.createElement('span');
-    textCheckboxParcelas.classList.add('text-checkbox-parcelas');
-    textCheckboxParcelas.textContent = 'Dividir valor';
-
-
+    const textCheckboxParcelas = criarSpan('Dividir-valor', 'text-checkbox-parcelas');
 
     const campoTags = document.createElement('div');
     campoTags.classList.add('campo-tags');
 
-    const tag = document.createElement('span');
-    tag.classList.add('text-tag');
-    tag.textContent = 'Crédito';
+    const tag = criarSpan('Crédito', 'text-tag');
 
-    const imagemDeleteTag = document.createElement('img');
-    imagemDeleteTag.setAttribute('src', 'delete (2).png');
-    imagemDeleteTag.classList.add('img-delete-tag');
+    const imagemDeleteTag = criarImagem('delete (2).png', 'Botão para deleter a tag', 'img-delete-tag');
 
-    const addTag = document.createElement('span');
-    addTag.classList.add('text-adicionar-tag');
-    addTag.textContent = 'Adicionar +';
+    const addTag = criarSpan('Adicionar', 'text-adicionar-tag');
 
     const campoObs = document.createElement('textarea');
     campoObs.setAttribute('placeholder', 'Obs...');
     campoObs.classList.add('obs');
 
-    const botaoConfirmar = document.createElement('button');
-    botaoConfirmar.classList.add('botao-confirmar');
-    botaoConfirmar.textContent = 'Confirmar';
+    const botaoConfirmar = criarBotao('Confirmar', 'botao-confirmar');
     
     
     container.appendChild(containerDespesa);
@@ -299,6 +274,9 @@ const clickExcluirTotal = () =>{
 }
 
 
+
+  
+
 const criarListaContas = () =>{
   const containerDespesa = document.querySelector('.container-despesa');
   container.removeChild(containerDespesa);
@@ -318,9 +296,7 @@ const criarListaContas = () =>{
   const containerDataConta = document.createElement('div');
   containerDataConta.classList.add('container-data-conta');
   
-  const textData = document.createElement('span');
-  textData.classList.add('text-data-lista');
-  textData.textContent  = '13/08';
+  const textData = criarSpan('13/08', 'text-data-lista');
 
   const conta = document.createElement('div');
   conta.classList.add('conta');
@@ -335,27 +311,16 @@ const criarListaContas = () =>{
   wrapTipoConta.classList.add('wrap-tipo-conta');
   wrapTipoConta.classList.add('wrap-text-conta');
 
-  const textTipoConta = document.createElement('span');
-  textTipoConta.classList.add('all-text-conta');
-  textTipoConta.classList.add('text-bold');
-  textTipoConta.textContent = 'Tipo';
+  const textTipoConta = criarSpan('Tipo', 'all-text-conta', 'text-bold');
 
-  const textConta = document.createElement('span');
-  textConta.classList.add('all-text-conta');
-  textConta.textContent = 'Conta';
+  const textConta = criarSpan('Conta', 'all-text-conta');
 
   const wrapStatusPagamento = document.createElement('div');
   wrapStatusPagamento.classList.add('wrap-status-pagamento');
   wrapStatusPagamento.classList.add('wrap-text-conta');
 
-  const textValorConta = document.createElement('span');
-  textValorConta.classList.add('all-text-conta');
-  textValorConta.classList.add('text-bold');
-  textValorConta.textContent = 'R$ -100,00';
-
-  const textStatusConta = document.createElement('span');
-  textStatusConta.classList.add('all-text-conta');
-  textStatusConta.textContent = 'não pago';
+  const textValorConta = criarSpan( 'R$ -100,00','all-text-conta','text-bold' )
+  const textStatusConta =  criarSpan( 'Pago!','all-text-conta')
 
 
   container.appendChild(containerLista);
@@ -382,5 +347,27 @@ const criarListaContas = () =>{
   wrapStatusPagamento.appendChild(textStatusConta);
 
 }
+
+
+
+
+
+// const icon = (type) =>{
+//   const iconType = document.createElement('img')
+//   iconType.setAttribute('src', `./${type}.png`)
+//   return iconType;
+// } 
+
+
+
+// const styledIcon = (type) => {
+//   const styledIconFrame = document.createElement('div')
+//   styledIconFrame.classList.add(`styled${type}`)
+
+//   const icone = icon(type)
+//   styledIconFrame.apprendChild(icone)
+
+//   return styledIconFrame;
+// }
 
 
