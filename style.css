@@ -334,7 +334,7 @@ body {
 .box-carteira {
   display: flex;
   width: 95%;
-  height: 12%;
+  min-height: 33%;
   background-color: var(--tercearia);
   border-radius: 0.7em;
   align-items: center;
@@ -383,17 +383,14 @@ body {
   color: var(--primary);
 }
 .add-carteira {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
   color: var(--primary);
   font-size: 2em;
-  padding: 0.2rem;
   background-color: #fff;
   border-radius: 100em;
   transform: translateX(3em);
-  width: 2rem;
-  height: 2rem;
+  border: none;
+  width: 2.3rem;
+  height: 2.3rem;
   font-weight: 1000;
 }
 .text-carteira {
@@ -416,7 +413,7 @@ body {
   border: 1px solid var(--primary);
   border-radius: 3em;
   font-size: 1.4em;
-  text-align: center;
+  text-align: cent1er;
 }
 .text-data {
   display: flex;
@@ -774,4 +771,13 @@ body {
   color: #fff;
   border-radius: 1em;
   font-size: 1.3em;
+}
+.wrap-box-carteira{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  width: 100%;
+  min-height: 30%;
+  overflow-y: scroll;
 }
