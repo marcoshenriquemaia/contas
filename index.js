@@ -330,6 +330,7 @@ const criarPaginaDespesa = () =>{
   }
   
 const clickBotaoSalvar = () =>{
+    const botaoSalvar = document.querySelector('.botao-salvar.cadastro.carteira');
     const campoTipo = document.querySelector('.campo-text-tipo-carteira');
     const campoNome = document.querySelector('.campo-text-nome-carteira');
     const containerDespesa = document.querySelector('.container-despesa');
@@ -349,9 +350,9 @@ const clickBotaoSalvar = () =>{
     const wrapCarteiraNome = document.createElement('div');
     wrapCarteiraNome.classList.add('wrap-carteira-nome');
 
-    const textCarteira = criarSpan(carteira[0].tipo, 'text-carteira');
+    const textCarteira = criarSpan(carteira[carteira.length -1].tipo, 'text-carteira');
 
-    const textNome = criarSpan(carteira[0].nome, 'text-nome');
+    const textNome = criarSpan(carteira[carteira.length -1].nome, 'text-nome');
 
     const textValor = criarSpan('R$ 100.000,00', 'text-valor');
 
@@ -365,6 +366,7 @@ const clickBotaoSalvar = () =>{
 
   
     containerDespesa.removeChild(cadastroCarteira);
+    botaoSalvar.removeEventListener('click');
 
     
 }
