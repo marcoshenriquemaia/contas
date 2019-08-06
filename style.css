@@ -240,9 +240,11 @@ body {
   height: 3.5rem;
   border: 3px solid var(--primary);
   color: var(--primary);
+  background-color: #fff;
 }
 .numero-discador0 {
   margin-left: 2.4em;
+  background-color: #fff;
 }
 .botao-discador {
   width: 45%;
@@ -412,9 +414,10 @@ body {
   width: 60%;
   height: 50%;
   border: 1px solid var(--primary);
+  background-color: #fff;
   border-radius: 3em;
   font-size: 1.4em;
-  text-align: cent1er;
+  text-align: center;
 }
 .text-data {
   display: flex;
@@ -732,7 +735,7 @@ body {
   top: 20%;
   position: absolute;
   width: 95%;
-  height: 30%;
+  height: 50%;
   background-color: var(--tercearia);
   border: 1px solid var(--shadow);
   box-shadow: 3px 3px 3px var(--shadow);
