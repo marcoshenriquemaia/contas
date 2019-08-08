@@ -97,6 +97,7 @@ body {
   transform: translateY(10%);
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 .icone-conta {
   width: 3em;
@@ -333,14 +334,21 @@ body {
   font-size: 1.2em;
   left: 1rem;
 }
+
 .box-carteira {
   display: flex;
   width: 95%;
-  min-height: 33%;
+  /* height: 5em; */
+  min-height: 35%;
+  box-sizing: border-box;
   background-color: var(--tercearia);
   border-radius: 0.7em;
   align-items: center;
   margin-bottom: 1em;
+  position: relative;
+}
+.box-carteira-onclick{
+  border: solid 5px red;
 }
 .icone-carteira {
   width: 1.8em;
@@ -356,17 +364,6 @@ body {
   align-items: center;
   z-index: 6;
   background-color: #fff;
-}
-.box-icone-carteira {
-  width: 3.5em;
-  height: 3.5em;
-  background-color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100em;
-  margin-left: 1em;
-  margin-right: 0.3em;
 }
 .wrap-carteira-nome {
   display: flex;
@@ -686,18 +683,6 @@ body {
   width: 1.8em;
   height: 1.8em;
 }
-.box-icone-carteira{
-  width: 3.5em;
-  height: 3.5em;
-  background-color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100em;
-  margin-left: 1em;
-  margin-right: .3em;
-}
-
 
 .botao-salvar-cadastro-carteira{
     margin-top: 1.5rem;
@@ -780,8 +765,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 100%;
-  min-height: 30%;
+  height: 25%;
   overflow-y: scroll;
+  position: relative;
+
+}
+.box-icone{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100em;
+  width: 3.5em;
+  height: 3.5em;
+}
+.wrap-nome-campo-conta{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 8%;
+}
+.campo-nome-conta{
+  margin-right: 1rem;
+  border: solid 1px var(--primary);
+  width: 80%;
+  height: 80%;
+  border-radius: 3rem;
+  text-align: center;
+  font-size: 1.5em
 }
