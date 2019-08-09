@@ -720,7 +720,7 @@ body {
   top: 20%;
   position: absolute;
   width: 95%;
-  height: 50%;
+  height: 30%;
   background-color: var(--tercearia);
   border: 1px solid var(--shadow);
   box-shadow: 3px 3px 3px var(--shadow);
@@ -796,4 +796,29 @@ body {
   border-radius: 3rem;
   text-align: center;
   font-size: 1.5em
+}
+.box-categorias{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+}
+.wrap-all-categorias{
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: .2em;
+  margin-top: .2em;
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px var(--shadow);
+  
+}
+.text-categoria{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
 }
