@@ -7,27 +7,16 @@ const CriarCategoriasConta = () => {
     boxCategorias.classList.add('box-categorias');
   
     const wrapLazer = CriarDiv('wrap-lazer', 'wrap-all-categorias');
-  
     const wrapAlimentacao = CriarDiv('wrap-alimentacao', 'wrap-all-categorias');
-  
     const wrapRoupas = CriarDiv('wrap-roupas', 'wrap-all-categorias');
-  
     const wrapSupermercado = CriarDiv('wrap-supermercado', 'wrap-all-categorias');
-  
-    const iconeLazer = CriarIcone('park.png', 'icones');
-  
-    const iconeAlimentacao = CriarIcone('fork.png', 'icones');
-  
-    const iconeRoupas = CriarIcone('clothes.png', 'icones');
-  
-    const iconeSupermercado = CriarIcone('shopping-cart.png', 'icones');
-  
+    const iconeLazer = CriarIcone('lazer.png', 'icone categoria','icones');
+    const iconeAlimentacao = CriarIcone('alimentacao.png', 'icone categoria','icones');
+    const iconeRoupas = CriarIcone('roupas.png', 'icone categoria','icones');
+    const iconeSupermercado = CriarIcone('supermercado.png', 'icone categoria','icones');
     const textLazer = CriarSpan('Lazer', 'text-categoria');
-  
     const textAlimentacao = CriarSpan('Alimentação','text-categoria');
-  
     const textRoupas = CriarSpan('Roupas', 'text-categoria');
-  
     const textSupermercado = CriarSpan('Supermercado', 'text-categoria');
   
     wrapLazer.appendChild(iconeLazer);

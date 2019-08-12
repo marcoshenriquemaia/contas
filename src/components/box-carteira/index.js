@@ -1,62 +1,42 @@
-import CriarDiv from '../shared/criar-div/index.js';
-import CriarSpan from '../shared/criar-span/index.js';
-import CriarBoxIcone from '../shared/criar-box-icone/index.js';
-import CriarIcone from '../shared/criar-icone/index.js';
+import CriarDiv from "../shared/criar-div/index.js";
+import CriarSpan from "../shared/criar-span/index.js";
+import CriarBoxIcone from "../shared/criar-box-icone/index.js";
+import CriarIcone from "../shared/criar-icone/index.js";
 
-const BoxCarteira = (carteira) => {
-    const { nome, tipo, valor, cor } = carteira;
-  
-    const cadastroConta = document.querySelector(".cadastro-conta");
-  
-    const boxConta = CriarDiv("box-conta");
-  
-    const wrapCarteiraNome = criarWrapCarteiraNome(nome, tipo);
-    
-    const valorCarteira = criarValorCarteira(valor);
-  
-    const boxIcone = criarIconeBoxCarteiraCadastro();
-  
-    const icone = CriarIcone('add (2).png', 'Icone Carteira', 'icone-carteira');
-  
-  
-    boxConta.appendChild(boxIcone);
-    boxIcone.appendChild(icone);
-    boxConta.appendChild(wrapCarteiraNome);
-    boxConta.appendChild(valorCarteira)
-    cadastroConta.appendChild(boxConta);
-};
+const BoxCarteira = carteira => {
 
-const criarWrapCarteiraNome = (nome, tipo) => {
+  const criarWrapCarteiraNome = (nome, tipo) => {
+    const wrapCarteiraNome = CriarDiv("wrap-carteira-nome");
+    const textCarteira = CriarSpan(tipo, "text-carteira");
+    const textNome = CriarSpan(nome, "text-nome");
 
-  const wrapCarteiraNome = CriarDiv("wrap-carteira-nome");
+    wrapCarteiraNome.appendChild(textCarteira);
+    wrapCarteiraNome.appendChild(textNome);
 
-  const textCarteira = CriarSpan(tipo, "text-carteira");
+    return wrapCarteiraNome;
+  };
 
-  const textNome = CriarSpan(nome, "text-nome");
+  const criarValorCarteira = valor => {
+    const valorCarteira = CriarSpan(`R$${valor}`, "valor-carteira");
+    return valorCarteira;
+  };
 
-  wrapCarteiraNome.appendChild(textCarteira);
-  wrapCarteiraNome.appendChild(textNome);
+  const { nome, tipo, valor, cor } = carteira;
 
-  return wrapCarteiraNome;
-};
+  const cadastroConta = document.querySelector(".cadastro-conta");
+  const boxCarteira = CriarDiv("box-carteira");
+  const wrapCarteiraNome = criarWrapCarteiraNome(nome, tipo);
+  const valorCarteira = criarValorCarteira(valor);
+  const boxIcone = CriarBoxIcone(cor);
+  const icone = CriarIcone("add (2).png", "Icone Carteira", "icone-carteira");
 
-const criarValorCarteira = valor => {
-  const valorCarteira = CriarSpan(
-    valor,
-    "valor-carteira"
-  );
-  return valorCarteira; 
-};
-
-const criarIconeBoxCarteiraCadastro = () =>{
-  const boxIcone = CriarBoxIcone('red');
-  
-  const icone = CriarIcone('add.png', 'icones', 'icones');
-
+  boxCarteira.appendChild(boxIcone);
   boxIcone.appendChild(icone);
+  boxCarteira.appendChild(wrapCarteiraNome);
+  boxCarteira.appendChild(valorCarteira);
+  cadastroConta.appendChild(boxCarteira);
 
-  return boxIcone;
-}
+  return boxCarteira;
+};
 
-
-export default BoxCarteira; 
+export default BoxCarteira;

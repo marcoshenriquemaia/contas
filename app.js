@@ -1,32 +1,89 @@
-import BoxCarteira from './src/components/box-carteira/index.js';
-import CriarCadastroCategorias from './src/components/categorias-conta/index.js';
-import Discador from './src/components/discador/index.js';
+import BoxCarteira from "./src/components/box-carteira/index.js";
+import CriarCadastroCategorias from "./src/components/categorias-conta/index.js";
+import Discador from "./src/components/discador/index.js";
 
-
-import CriarBoxIcone from './src/components/shared/criar-box-icone/index.js';
-import CriarDiv from './src/components/shared/criar-div/index.js';
-import CriarImagem from './src/components/shared/criar-imagem/index.js';
-import CriarBotao from './src/components/shared/criar-botao/index.js';
-import CriarIcone from './src/components/shared/criar-icone/index.js'; 
-import CriarSpan from './src/components/shared/criar-span/index.js'; 
-import CriarH2 from './src/components/shared/criar-h2/index.js'; 
-import CriarInput from './src/components/shared/criar-input/index.js'; 
-
+import CriarBoxIcone from "./src/components/shared/criar-box-icone/index.js";
+import CriarDiv from "./src/components/shared/criar-div/index.js";
+import CriarImagem from "./src/components/shared/criar-imagem/index.js";
+import CriarBotao from "./src/components/shared/criar-botao/index.js";
+import CriarIcone from "./src/components/shared/criar-icone/index.js";
+import CriarSpan from "./src/components/shared/criar-span/index.js";
+import CriarH2 from "./src/components/shared/criar-h2/index.js";
+import CriarInput from "./src/components/shared/criar-input/index.js";
 
 const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
 const icone4 = document.querySelector(".icone-4");
+// Categoria e sub categoria, conta, nomePessoa, tag, obs, data, status, tipo, parelas.
+
+
+
+const dashBoardItem = {
+  _id: "7asd-fasdf789",
+  valor: 123123,
+  tipo: "Despesa",
+  carteira: {
+    nome: "Nubank",
+    nomePessoa: "raul"
+  },
+  categoria: {
+    principal: "Lazer",
+    sub: "Cinema"
+  },
+  tags: ["rei leao"],
+  status: false,
+  data: {
+    dia: 11,
+    mes: 8,
+    ano: 2019
+  },
+  parcelado: {
+    valorRestante: 100,
+    quantidadeParcela: 2,
+    parcelaAtual: {
+      valor: 50,
+      numero: 1,
+      data: {
+        dia: 11,
+        mes: 8
+      }
+    },
+    proximaParcela: {
+      valor: 50,
+      numero: 2,
+      data: {
+        dia: 11,
+        mes: 9
+      }
+    }
+  },
+  obs: "Hakuna matata",
+  createdAt: new Date()
+};
+
+const dashBoard = [dashBoardItem, {...dashBoardItem, status: true},{...dashBoardItem, valor: 111}];
+
+
+// {
+//   categoria: {
+//     principal: '',
+//     sub: ''
+//   },
+//   carteira: {
+//     titulo: '',
+//     nome: ''
+//   }
+// }
 
 const carteira = {
   nome: "Marcos",
   tipo: "Carteira",
-  valor: "100",
-  cor: '#0099ff'
+  valor: 100,
+  cor: "#0099ff"
 };
 const carteiras = [];
 
 const contas = [];
-
 
 botaoAdd.addEventListener("click", e => {
   Discador(criarPaginaDespesa);
@@ -45,8 +102,16 @@ container.addEventListener("click", e => {
   }
 });
 
-
 const criarPaginaDespesa = () => {
+  // try{
+  //   const containerList = document.querySelector('.container-lista');
+  //   containerList.remove();
+  // }catch(err){
+  //   console.log(err)
+  // }
+  const containerList = document.querySelector('.container-lista');
+  containerList && containerList.remove();
+
   const containerDespesa = document.createElement("section");
   containerDespesa.classList.add("container-despesa");
 
@@ -75,13 +140,9 @@ const criarPaginaDespesa = () => {
 
   const excluirTotal = CriarIcone("delete (1).png", "Voltar", "botao-excluir");
 
-  const wrapNomeCampoConta = CriarDiv('wrap-nome-campo-conta');
-
-  const campoNomeConta = CriarInput("text", "Nome da conta", "campo-nome-conta", "campo-nome-conta");
-
   const wrapBoxCarteira = CriarDiv("wrap-box-carteira");
 
-  const boxCarteira = BoxCarteira();
+  const boxCarteira = BoxCarteira(carteira);
 
   const boxIcone = CriarDiv("box-icone-carteira");
 
@@ -166,11 +227,8 @@ const criarPaginaDespesa = () => {
 
   boxTotal.appendChild(excluirTotal);
 
-  wrapNomeCampoConta.appendChild(campoNomeConta);
-
   containerDespesa.appendChild(boxTotal);
   containerDespesa.appendChild(cabecalho);
-  containerDespesa.appendChild(wrapNomeCampoConta);
   containerDespesa.appendChild(wrapBoxCarteira);
   containerDespesa.appendChild(dataDespesa);
   containerDespesa.appendChild(boxParcelas);
@@ -178,13 +236,10 @@ const criarPaginaDespesa = () => {
   containerDespesa.appendChild(campoObs);
   containerDespesa.appendChild(botaoConfirmar);
 
-  wrapBoxCarteira.appendChild(boxCarteira)
+  wrapBoxCarteira.appendChild(boxCarteira);
   wrapBoxCarteira.appendChild(boxCarteiraAdd);
 
   boxIcone.appendChild(iconeCarteira);
-  // boxCarteira.appendChild(boxIcone);
-  // boxCarteira.appendChild(wrapCarteiraNome);
-  // boxCarteira.appendChild(textValor);
   wrapCarteiraNome.appendChild(textCarteira);
   wrapCarteiraNome.appendChild(textNome);
 
@@ -209,13 +264,11 @@ const criarPaginaDespesa = () => {
   wrapCheckboxParcelas.appendChild(checkboxParcelas);
   wrapCheckboxParcelas.appendChild(textCheckboxParcelas);
 
-  excluirTotal.addEventListener('click', mostrarCarteira);
+  excluirTotal.addEventListener("click", mostrarCarteira);
   excluirTotal.addEventListener("click", clickExcluirTotal);
   botaoConfirmar.addEventListener("click", criarListaContas);
-  botaoAdd.addEventListener("click",CriarCadastroCategorias);
-  botaoConfirmar.addEventListener('click', () =>{
-    criarArrayConta(campoNomeConta.value, valorDiscador);
-  })
+  botaoAdd.addEventListener("click", CriarCadastroCategorias);
+  botaoConfirmar.addEventListener("click", listarDashboard);
 };
 
 const clickExcluirTotal = () => {
@@ -238,26 +291,7 @@ const criarListaContas = () => {
 
   const textData = CriarSpan("13/08", "text-data-lista");
 
-  const conta = CriarDiv("conta");
 
-  const iconeConta = CriarDiv("icone-conta");
-
-  const boxTextConta = CriarDiv("box-text-conta");
-
-  const wrapTipoConta = CriarDiv("wrap-tipo-conta", "wrap-text-conta");
-
-  const textTipoConta = CriarSpan("Tipo", "all-text-conta", "text-bold");
-
-  const textConta = CriarSpan("Conta", "all-text-conta");
-
-  const wrapStatusPagamento = CriarDiv(
-    "wrap-status-pagamento",
-    "wrap-text-conta"
-  );
-
-  const textValorConta = CriarSpan("R$ -100,00", "all-text-conta", "text-bold");
-
-  const textStatusConta = CriarSpan("Pago!", "all-text-conta");
 
   container.appendChild(containerLista);
 
@@ -267,19 +301,6 @@ const criarListaContas = () => {
   campoValores.appendChild(iconeValor);
 
   containerDataConta.appendChild(textData);
-  containerDataConta.appendChild(conta);
-
-  conta.appendChild(iconeConta);
-  conta.appendChild(boxTextConta);
-
-  boxTextConta.appendChild(wrapTipoConta);
-  boxTextConta.appendChild(wrapStatusPagamento);
-
-  wrapTipoConta.appendChild(textTipoConta);
-  wrapTipoConta.appendChild(textConta);
-
-  wrapStatusPagamento.appendChild(textValorConta);
-  wrapStatusPagamento.appendChild(textStatusConta);
 };
 
 const criarWrapMeta = () => {
@@ -304,7 +325,6 @@ const criarWrapBarraMeta = () => {
   wrapTituloBarra.appendChild(barra);
 };
 
-
 const criarValorMeta = () => {
   const wrapMeta = document.querySelector("wrap-meta");
 
@@ -313,66 +333,107 @@ const criarValorMeta = () => {
   wrapMeta.appendChild(valorMeta);
 };
 
-const mostrarCarteira = () =>{
-  const cadastroConta = document.querySelector('.cadastro-conta');
-  cadastroConta.innerHTML = '';
-  
+const mostrarCarteira = () => {
+  const cadastroConta = document.querySelector(".cadastro-conta");
+  cadastroConta.innerHTML = "";
+
   carteiras.forEach(carteira => {
-    
     BoxCarteira(carteira);
-    
   });
 
   carteiras.push(carteira);
-}
-icone4.addEventListener('click', mostrarCarteira);
+};
+icone4.addEventListener("click", mostrarCarteira);
 
-const criarBoxTotalConta = () =>{ 
-
-  const boxTotal = CriarDiv('box-total');
+const criarBoxTotalConta = () => {
+  const boxTotal = CriarDiv("box-total");
 
   const valorTotalConta = criarValorTotalConta();
 
   boxTotal.appendChild(valorTotalConta);
 
   return boxTotal;
-}
+};
 
-const criarValorTotalConta = () =>{
-  const valorTotalConta = CriarSpan('', 'valor-total');
+const criarValorTotalConta = () => {
+  const valorTotalConta = CriarSpan("", "valor-total");
   valorTotalConta.textContent = valorDiscador;
 
   return valorTotalConta;
+};
+
+// icone.
+
+const dashboardItem = (dashItem) => {
+  const { categoria: { principal, sub }, valor, status } = dashItem;
+
+  const iconeDespesa = () => {
+    const boxIcone = CriarDiv("icone-conta");
+
+    const icone = CriarIcone(`${principal}.png`, "Icone", "icones");
+
+    boxIcone.appendChild(icone);
+
+    return boxIcone;
+  };
+
+  const boxTextConta = () => {
+    const wrapTipoConta = () => {
+      const wrapTipoConta = CriarDiv("wrap-tipo-conta", "wrap-text-conta");
+
+      const textTipo = CriarSpan(principal,"all-text-conta", "text-bold");
+
+      const textConta = CriarSpan(sub, "all-text-conta");
+
+      wrapTipoConta.appendChild(textTipo);
+      wrapTipoConta.appendChild(textConta);
+
+      return wrapTipoConta;
+    };
+
+    const wrapStatusPagamento = () => {
+      const wrapStatusPagamento = CriarDiv(
+        "wrap-status-pagamento",
+        "wrap-text-conta"
+      );
+
+      const textValor = CriarSpan(`R$ ${valor}`, "all-text-conta", "text-bold");
+
+      const textStatus = CriarSpan(status ? 'Pago' : 'Não Pago', "all-text-conta");
+
+      wrapStatusPagamento.appendChild(textValor);
+      wrapStatusPagamento.appendChild(textStatus);
+
+      return wrapStatusPagamento;
+    };
+
+    const boxTextConta = CriarDiv("box-text-conta");
+
+    const tipoConta = wrapTipoConta();
+    const statusPagamento = wrapStatusPagamento();
+
+    boxTextConta.appendChild(tipoConta);
+    boxTextConta.appendChild(statusPagamento);
+
+    return boxTextConta;
+  };
+
+  const conta = CriarDiv("conta");
+
+  const icone = iconeDespesa();
+  const boxConta = boxTextConta();
+
+  conta.appendChild(icone);
+  conta.appendChild(boxConta);
+  return conta;
+};
+
+
+const listarDashboard = () =>{
+  const container = document.querySelector('.container-data-conta');
+  dashBoard.map(item =>{
+    const dashBoardElement = dashboardItem(item);
+    container.appendChild(dashBoardElement); 
+  })
 }
 
-const criarArrayConta = (nome, valor, carteira, data, parcelas, obs, ...tags) =>{
-  const conta = {
-    nome,
-    valor,
-    carteira,
-    data,
-    parcelas,
-    obs,
-    tags
-  }
-
-  contas.push(conta);
-}
-
-
-const criarWrapCarteiraNomeCadastro = () =>{
-  const wrapCarteiraNome = CriarDiv('wrap-carteira-nome');
-
-  const tipoCarteira = CriarSpan('Carteira', 'text-carteira');
-
-  const nomeCarteira = CriarSpan('Nome', 'text-nome');
-
-  wrapCarteiraNome.appendChild(tipoCarteira);
-  wrapCarteiraNome.appendChild(nomeCarteira);
-
-  return wrapCarteiraNome;
-
-}
-
-
-// Arrumar box carteira, icone. 
