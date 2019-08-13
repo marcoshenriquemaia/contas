@@ -10,6 +10,7 @@ import CriarIcone from "./src/components/shared/criar-icone/index.js";
 import CriarSpan from "./src/components/shared/criar-span/index.js";
 import CriarH2 from "./src/components/shared/criar-h2/index.js";
 import CriarInput from "./src/components/shared/criar-input/index.js";
+import AddCategiria from "./src/components/add-categoria/index.js";
 
 const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
@@ -63,18 +64,6 @@ const dashBoardItem = {
 
 const dashBoard = [dashBoardItem, {...dashBoardItem, status: true},{...dashBoardItem, valor: 111}];
 
-
-// {
-//   categoria: {
-//     principal: '',
-//     sub: ''
-//   },
-//   carteira: {
-//     titulo: '',
-//     nome: ''
-//   }
-// }
-
 const carteira = {
   nome: "Marcos",
   tipo: "Carteira",
@@ -83,7 +72,6 @@ const carteira = {
 };
 const carteiras = [];
 
-const contas = [];
 
 botaoAdd.addEventListener("click", e => {
   Discador(criarPaginaDespesa);
@@ -102,13 +90,8 @@ container.addEventListener("click", e => {
   }
 });
 
+
 const criarPaginaDespesa = () => {
-  // try{
-  //   const containerList = document.querySelector('.container-lista');
-  //   containerList.remove();
-  // }catch(err){
-  //   console.log(err)
-  // }
   const containerList = document.querySelector('.container-lista');
   containerList && containerList.remove();
 
@@ -160,23 +143,7 @@ const criarPaginaDespesa = () => {
 
   const textValor = CriarSpan("R$ 100.000,00", "text-valor");
 
-  const boxCarteiraAdd = CriarDiv("box-carteira");
-
-  const boxIconeAdd = CriarDiv("box-icone-carteira");
-
-  const iconeCarteiraAdd = CriarIcone(
-    "bill.png",
-    "Botao Adicionar Carteira",
-    "icone-carteira"
-  );
-
-  const wrapCarteiraNomeAdd = CriarDiv("wrap-carteira-nome");
-
-  const textCarteiraAdd = CriarSpan("Categoria", "text-carteira");
-
-  const textNomeAdd = CriarSpan("Nome", "text-nome");
-
-  const botaoAdd = CriarBotao("+", "add-carteira");
+  const boxCarteiraAdd = AddCategiria();
 
   const dataDespesa = CriarDiv("data");
 
@@ -243,12 +210,6 @@ const criarPaginaDespesa = () => {
   wrapCarteiraNome.appendChild(textCarteira);
   wrapCarteiraNome.appendChild(textNome);
 
-  boxCarteiraAdd.appendChild(boxIconeAdd);
-  boxCarteiraAdd.appendChild(wrapCarteiraNomeAdd);
-  boxCarteiraAdd.appendChild(botaoAdd);
-  boxIconeAdd.appendChild(iconeCarteiraAdd);
-  wrapCarteiraNomeAdd.appendChild(textCarteiraAdd);
-  wrapCarteiraNomeAdd.appendChild(textNomeAdd);
 
   dataDespesa.appendChild(textData);
   dataDespesa.appendChild(campoData);
@@ -436,4 +397,3 @@ const listarDashboard = () =>{
     container.appendChild(dashBoardElement); 
   })
 }
-

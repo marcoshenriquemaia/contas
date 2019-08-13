@@ -831,3 +831,6 @@ body {
   align-items: center;
   width: 40%;
 }
+.box-carteira2{
+  border: 1px solid var(--primary);
+}

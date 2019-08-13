@@ -1,8 +1,11 @@
 import CriarSpan from '../shared/criar-span/index.js';
 import CriarBotao from '../shared/criar-botao/index.js';
 import BotoesDiscador from './botoes-discador/index.js';
+import DashBoard from '../dashBoard/index.js';
 
 const container = document.querySelector(".container");
+
+const dashBoard = DashBoard();
 
 const Discador = (criarPaginaDespesa) => {
   
@@ -44,6 +47,11 @@ const Discador = (criarPaginaDespesa) => {
     container.appendChild(containerDiscador);
   
     botaoContinuar.addEventListener("click", () => clickContinuarDiscador(criarPaginaDespesa));
+    botaoContinuar.addEventListener('click', () =>{
+      // const { valor, _id } = dashBoard;
+      dashBoard.valor = campoValoresDiscador.textContent;
+      console.log(dashBoard);
+    })
   };
   
   const clickContinuarDiscador = (criarPaginaDespesa) => {
