@@ -3,6 +3,7 @@ import CriarSpan from "../shared/criar-span/index.js";
 import CriarBoxIcone from "../shared/criar-box-icone/index.js";
 import CriarIcone from "../shared/criar-icone/index.js";
 import CriarBotao from "../shared/criar-botao/index.js";
+import CriarCadastroCategorias from '../categorias-conta/index.js'; 
 
 
 const AddCategiria = () => {
@@ -45,6 +46,8 @@ const botaoAdd = CriarBotao("+", "add-carteira");
 boxCategoriaAdd.appendChild(iconeCategoria);
 boxCategoriaAdd.appendChild(wrapText);
 boxCategoriaAdd.appendChild(botaoAdd);
+
+botaoAdd.addEventListener('click', CriarCadastroCategorias);
 
 return boxCategoriaAdd;
 };

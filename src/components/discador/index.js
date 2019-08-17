@@ -5,9 +5,9 @@ import DashBoard from '../dashBoard/index.js';
 
 const container = document.querySelector(".container");
 
-const dashBoard = DashBoard();
 
 const Discador = (criarPaginaDespesa) => {
+  const dashBoard = DashBoard();
   
     const containerDiscador = document.createElement("section");
     containerDiscador.classList.add("container-discador");
@@ -49,8 +49,8 @@ const Discador = (criarPaginaDespesa) => {
     botaoContinuar.addEventListener("click", () => clickContinuarDiscador(criarPaginaDespesa));
     botaoContinuar.addEventListener('click', () =>{
       // const { valor, _id } = dashBoard;
-      dashBoard.valor = campoValoresDiscador.textContent;
-      console.log(dashBoard);
+      // dashBoard.valor = campoValoresDiscador.textContent;
+      console.log(campoValoresDiscador.textContent);
     })
   };
   
