@@ -249,4 +249,5 @@ iconeHome.addEventListener('click', () =>{
   containerLista && container.removeChild(containerLista);
 })
 
-CriaHome();
+
+container.onload = CriaHome();
