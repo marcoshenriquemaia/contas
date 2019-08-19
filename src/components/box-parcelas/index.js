@@ -1,10 +1,12 @@
 import CriarDiv from "../shared/criar-div/index.js";
 import CriarSpan from "../shared/criar-span/index.js";
+import CriarIcone from "../shared/criar-icone/index.js";
+import MudaIcone from "../muda-icone/index.js";
 
 const BoxParcelas = () => {
   const wrapCheckboxParcelas = () => {
     const wrapCheckboxParcelas = CriarDiv("wrap-checkbox-parcelas");
-    const checkboxParcelas = CriarDiv("checkbox-parcelas");
+    const checkboxParcelas = CriarIcone('checkbox.png', 'icone', 'checkbox-parcelas');
     const textCheckboxParcelas = CriarSpan(
       "Dividir-valor",
       "text-checkbox-parcelas"
@@ -12,6 +14,10 @@ const BoxParcelas = () => {
 
     wrapCheckboxParcelas.appendChild(checkboxParcelas);
     wrapCheckboxParcelas.appendChild(textCheckboxParcelas);
+//icone, pai, classeGeral, classe
+    checkboxParcelas.addEventListener('click', ()=>{
+      MudaIcone('checkbox-marcado.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas');
+    })
 
     return wrapCheckboxParcelas;
   };

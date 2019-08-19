@@ -16,6 +16,7 @@ import AddCategiria from "./src/components/add-categoria/index.js";
 import BoxParcelas from "./src/components/box-parcelas/index.js";
 import BoxTags from "./src/components/box-tags/index.js";
 import CriaHome from "./src/pages/home/index.js";
+import DataDespesa from "./src/components/data-despesa/index.js";
 
 const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
@@ -126,19 +127,8 @@ const criarPaginaDespesa = () => {
 
   const wrapBoxCarteira = CriarDiv("wrap-box-carteira");
   const boxCarteira = BoxCarteira(carteira);
-  const boxIcone = CriarDiv("box-icone-carteira");
-  const iconeCarteira = CriarIcone(
-    "bill.png",
-    "Icone da Carteira",
-    "icone-carteira"
-  );
-  const wrapCarteiraNome = CriarDiv("wrap-carteira-nome");
-  const textCarteira = CriarSpan("Carteira", "text-carteira");
-  const textNome = CriarSpan("Nome", "text-nome");
   const boxCarteiraAdd = AddCategiria();
-  const dataDespesa = CriarDiv("data");
-  const textData = CriarSpan("Data", "text-data");
-  const campoData = CriarInput("date", "", "campo-data", "campo-data");
+  const dataDespesa = DataDespesa();
   const boxParcelas = BoxParcelas();
   const campoTags = BoxTags();
   const campoObs = document.createElement("textarea");
@@ -163,13 +153,6 @@ const criarPaginaDespesa = () => {
 
   wrapBoxCarteira.appendChild(boxCarteira);
   wrapBoxCarteira.appendChild(boxCarteiraAdd);
-
-  boxIcone.appendChild(iconeCarteira);
-  wrapCarteiraNome.appendChild(textCarteira);
-  wrapCarteiraNome.appendChild(textNome);
-
-  dataDespesa.appendChild(textData);
-  dataDespesa.appendChild(campoData);
 
   botaoAdd.addEventListener("click", CriarCadastroCategorias);
   botaoConfirmar.addEventListener("click", Despesas)

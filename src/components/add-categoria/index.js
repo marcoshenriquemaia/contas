@@ -1,45 +1,18 @@
 import CriarDiv from "../shared/criar-div/index.js";
 import CriarSpan from "../shared/criar-span/index.js";
-import CriarBoxIcone from "../shared/criar-box-icone/index.js";
-import CriarIcone from "../shared/criar-icone/index.js";
 import CriarBotao from "../shared/criar-botao/index.js";
 import CriarCadastroCategorias from '../categorias-conta/index.js'; 
+import Icone from "./icones/indes.js";
+import WrapCategoriaNomeAdd from "./wrap-categoria-nome-add/indes.js";
 
 
 const AddCategiria = () => {
 
-  const icone = () =>{
-    const boxIconeAdd = CriarBoxIcone("var(--primary)");
-
-    const iconeCategoriaAdd = CriarIcone(
-      "bill.png",
-      "Botao Adicionar Carteira",
-      "icone-carteira"
-    );
-
-    boxIconeAdd.appendChild(iconeCategoriaAdd);
-
-    return boxIconeAdd;
-  }
-
-  const wrapCategoriaNomeAdd = () =>{
-    const wrapCategoriaNomeAdd = CriarDiv("wrap-carteira-nome");
-
-    const textCategoriaAdd = CriarSpan("Categoria", "text-carteira");
-  
-    const textNomeAdd = CriarSpan("Nome", "text-nome");
-
-    wrapCategoriaNomeAdd.appendChild(textCategoriaAdd);
-    wrapCategoriaNomeAdd.appendChild(textNomeAdd);
-
-    return wrapCategoriaNomeAdd;
-  
-}
 const boxCategoriaAdd = CriarDiv("box-carteira");
 
-const iconeCategoria = icone();
+const iconeCategoria = Icone('var(--primary)', 'bill.png');
 
-const wrapText = wrapCategoriaNomeAdd();
+const wrapText = WrapCategoriaNomeAdd('Categoria','Nome');
 
 const botaoAdd = CriarBotao("+", "add-carteira");
 
