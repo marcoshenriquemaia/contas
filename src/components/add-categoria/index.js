@@ -1,5 +1,4 @@
 import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
 import CriarBotao from "../shared/criar-botao/index.js";
 import CriarCadastroCategorias from '../categorias-conta/index.js'; 
 import Icone from "./icones/indes.js";

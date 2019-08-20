@@ -1,7 +1,7 @@
 import CriarIcone from "../shared/criar-icone/index.js";
 
 const MudaIcone = (icone, pai, classeGeral, classe) =>{
-    const boxIconeAdd = document.querySelector(`.${pai}`);
+    const boxIconeAdd = pai && document.querySelector(`.${pai}`);
     const iconeAntigo = document.querySelector(`.${classe}`);
 
     boxIconeAdd.removeChild(iconeAntigo);

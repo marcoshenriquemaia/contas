@@ -1,13 +1,11 @@
 import CriarSpan from '../shared/criar-span/index.js';
 import CriarBotao from '../shared/criar-botao/index.js';
 import BotoesDiscador from './botoes-discador/index.js';
-import DashBoard from '../dashBoard/index.js';
 
 const container = document.querySelector(".container");
 
 
 const Discador = (criarPaginaDespesa) => {
-  const dashBoard = DashBoard();
   
     const containerDiscador = document.createElement("section");
     containerDiscador.classList.add("container-discador");

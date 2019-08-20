@@ -1,33 +1,17 @@
 import CriarDiv from '../shared/criar-div/index.js';
 import CriarSpan from '../shared/criar-span/index.js';
 import CriarIcone from '../shared/criar-icone/index.js';
+import ItemCategoria from './item-categoria/index.js';
 
 const CriarCategoriasConta = () => {
     const boxCategorias = document.createElement('div');
     boxCategorias.classList.add('box-categorias');
   
-    const wrapLazer = CriarDiv('wrap-lazer', 'wrap-all-categorias');
-    const wrapAlimentacao = CriarDiv('wrap-alimentacao', 'wrap-all-categorias');
-    const wrapRoupas = CriarDiv('wrap-roupas', 'wrap-all-categorias');
-    const wrapSupermercado = CriarDiv('wrap-supermercado', 'wrap-all-categorias');
-    const iconeLazer = CriarIcone('lazer.png', 'icone categoria','icones');
-    const iconeAlimentacao = CriarIcone('alimentacao.png', 'icone categoria','icones');
-    const iconeRoupas = CriarIcone('roupas.png', 'icone categoria','icones');
-    const iconeSupermercado = CriarIcone('supermercado.png', 'icone categoria','icones');
-    const textLazer = CriarSpan('Lazer', 'text-categoria');
-    const textAlimentacao = CriarSpan('Alimentação','text-categoria');
-    const textRoupas = CriarSpan('Roupas', 'text-categoria');
-    const textSupermercado = CriarSpan('Supermercado', 'text-categoria');
-  
-    wrapLazer.appendChild(iconeLazer);
-    wrapLazer.appendChild(textLazer);
-    wrapAlimentacao.appendChild(iconeAlimentacao);
-    wrapAlimentacao.appendChild(textAlimentacao);
-    wrapRoupas.appendChild(iconeRoupas);
-    wrapRoupas.appendChild(textRoupas);
-    wrapSupermercado.appendChild(iconeSupermercado);
-    wrapSupermercado.appendChild(textSupermercado);
-  
+    const wrapLazer = ItemCategoria('lazer', 'Lazer');
+    const wrapRoupas = ItemCategoria('roupas', 'Roupas');
+    const wrapSupermercado = ItemCategoria('supermercado', 'Supermercado');
+    const wrapAlimentacao = ItemCategoria('alimentacao', 'Alimentacao');
+
     boxCategorias.appendChild(wrapLazer);
     boxCategorias.appendChild(wrapAlimentacao);
     boxCategorias.appendChild(wrapRoupas);
