@@ -24,9 +24,10 @@ const BoxTags = () => {
       inputTag.value = '';
   })
   inputTag.addEventListener('keydown', e =>{
+    const arrayTags = [...document.querySelectorAll('.text-tag')]
     if (e.key != 'Backspace') return;
     if (inputTag.value != '') return;
-    const arrayTags = [...document.querySelectorAll('.text-tag')]
+    if (!arrayTags[0]) return;
     const ultimaTag = arrayTags[arrayTags.length -1];
     campoTags.removeChild(ultimaTag);
 
