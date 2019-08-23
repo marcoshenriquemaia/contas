@@ -3,7 +3,10 @@ import CriarSpan from "../shared/criar-span/index.js";
 import CriarIcone from "../shared/criar-icone/index.js";
 import MudaIcone from "../muda-icone/index.js";
 
+
 const BoxParcelas = () => {
+  let checkbox = false;
+
   const wrapCheckboxParcelas = () => {
     const wrapCheckboxParcelas = CriarDiv("wrap-checkbox-parcelas");
     const checkboxParcelas = CriarIcone('checkbox.png', 'icone', 'checkbox-parcelas');
@@ -12,11 +15,15 @@ const BoxParcelas = () => {
       "text-checkbox-parcelas"
     );
 
-    wrapCheckboxParcelas.appendChild(checkboxParcelas);
     wrapCheckboxParcelas.appendChild(textCheckboxParcelas);
-//icone, pai, classeGeral, classe
-    checkboxParcelas.addEventListener('click', ()=>{
-      MudaIcone('checkbox-marcado.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas');
+    wrapCheckboxParcelas.appendChild(checkboxParcelas);
+
+    wrapCheckboxParcelas.addEventListener('click', () => {
+      checkbox 
+      ? MudaIcone('checkbox.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas') 
+      : MudaIcone('checkbox-marcado.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas');
+      checkbox = !checkbox;
+      campoParcelas.classList.toggle('campo-parcelas-on');
     })
 
     return wrapCheckboxParcelas;
@@ -25,13 +32,13 @@ const BoxParcelas = () => {
   const campoQuantidadeParcelas = () => {
     const campoParcelas = CriarDiv("campo-parcelas");
     const textQuantidadeParcelas = CriarSpan(
-      "1 vez",
+      "1x",
       "text-quantidade-parcelas"
     );
 
     campoParcelas.appendChild(textQuantidadeParcelas);
 
-    return campoParcelas; 
+    return campoParcelas;
   };
 
   const boxParcelas = CriarDiv("parcelas");

@@ -11,7 +11,7 @@ const CriarCadastroCategorias = () => {
   
     
     cadastroCategorias.appendChild(boxCategorias);
-    containerDespesa.appendChild(cadastroCategorias);
+    containerDespesa && containerDespesa.appendChild(cadastroCategorias);
     
     boxCategorias.addEventListener("click", clickCategoria);
     

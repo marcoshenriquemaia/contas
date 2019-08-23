@@ -1,27 +1,36 @@
 import CriarDiv from "../shared/criar-div/index.js";
 import CriarSpan from "../shared/criar-span/index.js";
-import CriarIcone from "../shared/criar-icone/index.js";
+import CriarTag from "./tag/index.js";
+import CriarInput from "../shared/criar-input/index.js";
 
 const BoxTags = () => {
-  const tag = () =>{
-    const tag = CriarSpan("Crédito", "text-tag");
-
-    const imagemDeleteTag = CriarIcone(
-      "delete (2).png",
-      "Botão para deleter a tag",
-      "img-delete-tag"
-    );
-
-    tag.appendChild(imagemDeleteTag);
-
-    return tag;
-  }
+  const inputTag = CriarInput('text', '', 'input-tag', 'input-tag');
   const campoTags = CriarDiv("campo-tags");
-  const tags = tag();
   const addTag = CriarSpan("Adicionar", "text-adicionar-tag");
 
-  campoTags.appendChild(tags);
-  campoTags.appendChild(addTag);
+  campoTags.appendChild(inputTag);
+
+  inputTag.addEventListener('focus', () => {
+    campoTags.appendChild(addTag);
+  })
+
+  inputTag.addEventListener('focusout', () => {
+      if (inputTag.value === '') return;
+      const novaTag = CriarTag(inputTag.value);
+      campoTags.appendChild(novaTag);
+      addTag.remove();
+      inputTag.remove();
+      campoTags.appendChild(inputTag);
+      inputTag.value = '';
+  })
+  inputTag.addEventListener('keydown', e =>{
+    if (e.key != 'Backspace') return;
+    if (inputTag.value != '') return;
+    const arrayTags = [...document.querySelectorAll('.text-tag')]
+    const ultimaTag = arrayTags[arrayTags.length -1];
+    campoTags.removeChild(ultimaTag);
+
+  })
 
   return campoTags;
 };

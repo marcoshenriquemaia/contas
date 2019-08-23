@@ -4,14 +4,10 @@ import Discador from "./src/components/discador/index.js";
 import BoxTotalDespesa from "./src/components/box-valor-despesa/index.js";
 import Despesas from './src/pages/despesas/index.js';
 
-import CriarBoxIcone from "./src/components/shared/criar-box-icone/index.js";
 import CriarDiv from "./src/components/shared/criar-div/index.js";
-import CriarImagem from "./src/components/shared/criar-imagem/index.js";
 import CriarBotao from "./src/components/shared/criar-botao/index.js";
 import CriarIcone from "./src/components/shared/criar-icone/index.js";
 import CriarSpan from "./src/components/shared/criar-span/index.js";
-import CriarH2 from "./src/components/shared/criar-h2/index.js";
-import CriarInput from "./src/components/shared/criar-input/index.js";
 import AddCategiria from "./src/components/add-categoria/index.js";
 import BoxParcelas from "./src/components/box-parcelas/index.js";
 import BoxTags from "./src/components/box-tags/index.js";
@@ -24,7 +20,7 @@ const iconeHome = document.querySelector('.icone-1');
 
 
 const carteira = {
-  nome: "Marcoss",
+  nome: "Marcos",
   tipo: "Nubank",
   valor: 100,
   cor: "var(--primary)"
