@@ -24,7 +24,7 @@ const iconeHome = document.querySelector('.icone-1');
 
 
 const carteira = {
-  nome: "Marcos",
+  nome: "Marcoss",
   tipo: "Nubank",
   valor: 100,
   cor: "var(--primary)"
