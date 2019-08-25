@@ -1,4 +1,3 @@
-import CriarIcone from "../../components/shared/criar-icone/index.js";
 import CriarDiv from "../../components/shared/criar-div/index.js";
 import CriarSpan from "../../components/shared/criar-span/index.js";
 import CriarH2 from "../../components/shared/criar-h2/index.js";
@@ -12,9 +11,7 @@ const CriaHome = (valorDiscador, carteira) => {
   const campoValores = () => {
     const boxValores = CriarDiv("campo-valores");
     const valores = CriarSpan("R$ 100.000,00", "valores");
-    // const iconeValores = CriarIcone("bill.png", "icones");
 
-    // valores.appendChild(iconeValores);
     boxValores.appendChild(valores);
 
     return boxValores;

@@ -4,9 +4,7 @@ import CriarIcone from '../shared/criar-icone/index.js';
 import ItemCategoria from './item-categoria/index.js';
 
 const CriarCategoriasConta = () => {
-    const boxCategorias = document.createElement('div');
-    boxCategorias.classList.add('box-categorias');
-  
+    const boxCategorias = CriarDiv('box-categorias');
     const wrapLazer = ItemCategoria('lazer', 'Lazer');
     const wrapRoupas = ItemCategoria('roupas', 'Roupas');
     const wrapSupermercado = ItemCategoria('supermercado', 'Supermercado');

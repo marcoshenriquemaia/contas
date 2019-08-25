@@ -4,6 +4,7 @@ import CriarIcone from "../../../components/shared/criar-icone/index.js";
 import Discador from "../../../components/discador/index.js";
 
 const Rodape = (valorDiscador, carteira) =>{
+    const container = document.querySelector('.container');
     const boxRodape = CriarDiv('rodape');
     const botaoAdd = CriarBotao('', 'button-add');
     const wrapBoxEsquerda = CriarDiv('wrap-div-left');
