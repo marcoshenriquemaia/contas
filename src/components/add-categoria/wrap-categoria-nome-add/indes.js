@@ -1,12 +1,9 @@
-import CriarDiv from "../../shared/criar-div/index.js";
-import CriarSpan from "../../shared/criar-span/index.js";
+import CriarElemento from "../../shared/criar-elemento/index.js";
 
-const WrapCategoriaNomeAdd = (categoria, nome) =>{
-    const wrapCategoriaNomeAdd = CriarDiv("wrap-carteira-nome");
-
-    const textCategoriaAdd = CriarSpan(categoria, "text-carteira-add", 'text-carteira');
-  
-    const textNomeAdd = CriarSpan(nome, "text-nome-add");
+const WrapCategoriaNomeAdd = ({categoria, nome}) =>{
+    const wrapCategoriaNomeAdd = CriarElemento({ tipoElemento: 'div', classes: ['wrap-carteira-nome'] })
+    const textCategoriaAdd = CriarElemento({ tipoElemento: 'span', conteudo: categoria, classes: ["text-carteira-add", 'text-carteira']})
+    const textNomeAdd = CriarElemento({ tipoElemento: 'span', conteudo: nome, classes: ["text-nome-add"]})
 
     wrapCategoriaNomeAdd.appendChild(textCategoriaAdd);
     wrapCategoriaNomeAdd.appendChild(textNomeAdd);

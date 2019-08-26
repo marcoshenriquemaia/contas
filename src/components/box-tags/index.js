@@ -1,12 +1,12 @@
 import CriarDiv from "../shared/criar-div/index.js";
 import CriarSpan from "../shared/criar-span/index.js";
 import CriarTag from "./tag/index.js";
-import CriarInput from "../shared/criar-input/index.js";
+import CriarElemento from "../shared/criar-elemento/index.js";
 
 const BoxTags = () => {
-  const inputTag = CriarInput('text', '', 'input-tag', 'input-tag');
-  const campoTags = CriarDiv("campo-tags");
-  const addTag = CriarSpan("Adicionar", "text-adicionar-tag");
+  const inputTag = CriarElemento({tipoElemento: 'input', tipo: 'text', classes: ['input-tag']})
+  const campoTags = CriarElemento({tipoElemento: 'div', classes: ['campo-tags']})
+  const addTag = CriarElemento({tipoElemento: 'span', conteudo: 'Adicionar', classes: ['text-adicionar-tag']})
 
   campoTags.appendChild(inputTag);
 

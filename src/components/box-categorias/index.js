@@ -1,10 +1,8 @@
-import CriarDiv from '../shared/criar-div/index.js';
-import CriarSpan from '../shared/criar-span/index.js';
-import CriarIcone from '../shared/criar-icone/index.js';
 import ItemCategoria from './item-categoria/index.js';
+import CriarElemento from '../shared/criar-elemento/index.js';
 
 const CriarCategoriasConta = () => {
-    const boxCategorias = CriarDiv('box-categorias');
+    const boxCategorias = CriarElemento({tipoElemento: 'div', classes: ['box-categorias']})
     const wrapLazer = ItemCategoria('lazer', 'Lazer');
     const wrapRoupas = ItemCategoria('roupas', 'Roupas');
     const wrapSupermercado = ItemCategoria('supermercado', 'Supermercado');

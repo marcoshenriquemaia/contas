@@ -2,18 +2,20 @@ import CriarDiv from "../../../components/shared/criar-div/index.js";
 import CriarBotao from "../../../components/shared/criar-botao/index.js";
 import CriarIcone from "../../../components/shared/criar-icone/index.js";
 import Discador from "../../../components/discador/index.js";
+import CriarI from "../../../components/shared/criar-i/index.js";
 
-const Rodape = (valorDiscador, carteira) =>{
+const Rodape = ({valorDiscador, carteira, dashBoard}) =>{
     const container = document.querySelector('.container');
     const boxRodape = CriarDiv('rodape');
     const botaoAdd = CriarBotao('', 'button-add');
     const wrapBoxEsquerda = CriarDiv('wrap-div-left');
     const wrapBoxDireita = CriarDiv('wrap-div-right');
     const imagemAdd = CriarIcone('add (2).png','', 'imagem-add');
-    const icone1 = CriarIcone('house.png','home', 'icones', 'icone-1')
-    const icone2 = CriarIcone('bill.png','', 'icones', 'icone-2')
-    const icone3 = CriarIcone('bill.png','', 'icones', 'icone-3')
-    const icone4 = CriarIcone('bill.png','', 'icones', 'icone-4')
+    // const icone1 = CriarIcone('house.png','home', 'icones', 'icone-1')
+    const icone1 = CriarI({icone: 'fa-home'});
+    const icone2 = CriarI({icone: 'fa-chart-line'})
+    const icone3 = CriarI({icone: 'fa-user-friends'})
+    const icone4 = CriarI({icone: 'fa-cog'});  
 
     boxRodape.appendChild(wrapBoxEsquerda);
     boxRodape.appendChild(botaoAdd);
@@ -25,7 +27,9 @@ const Rodape = (valorDiscador, carteira) =>{
     wrapBoxDireita.appendChild(icone4);
 
     botaoAdd.addEventListener("click", e => {
-        Discador(valorDiscador, carteira, botaoAdd);
+        console.log(carteira);
+        
+        Discador({valorDiscador, carteira, botaoAdd, dashBoard});
     });
 
     icone1.addEventListener('click', () => {
@@ -38,7 +42,7 @@ const Rodape = (valorDiscador, carteira) =>{
         containerLista && container.removeChild(containerLista);
       })
 
-    return boxRodape;
+    container.appendChild(boxRodape);
 }
 
 export default Rodape;

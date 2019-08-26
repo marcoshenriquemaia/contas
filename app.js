@@ -1,9 +1,7 @@
-import Discador from "./src/components/discador/index.js";
 import CriaHome from "./src/pages/home/index.js";
+import Rodape from "./src/pages/home/rodape/index.js";
 
-const botaoAdd = document.querySelector(".imagem-add");
 const container = document.querySelector(".container");
-const iconeHome = document.querySelector('.icone-1');
 
 let valorDiscador;
 
@@ -11,7 +9,7 @@ const carteira = {
   nome: "Marcos",
   tipo: "Nubank",
   valor: 100,
-  cor: "var(--primary)"
+  cor: "red"
 };
 
 const dashBoardItem = {
@@ -57,11 +55,23 @@ const dashBoardItem = {
   createdAt: new Date()
 };
 
-const dashBoard = [
+export const dashBoard = [
   dashBoardItem,
   { ...dashBoardItem, status: true },
   { ...dashBoardItem, valor: 111 }
 ];
 
 
-container.onload = CriaHome(valorDiscador, carteira);
+
+container.onload = CriaHome();
+container.onload = Rodape({valorDiscador, carteira, dashBoard});
+
+// const meuArray= []
+
+// let valor;
+// let nome;
+// let conta;
+
+// const asas = {valor: inputquetemascoisas.textcontent ,conta: {conta,nome}}
+
+// meuArray.push(asas)

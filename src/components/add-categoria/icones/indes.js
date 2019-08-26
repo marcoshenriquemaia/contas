@@ -1,15 +1,9 @@
 import CriarBoxIcone from "../../shared/criar-box-icone/index.js";
-import CriarIcone from "../../shared/criar-icone/index.js";
+import CriarElemento from "../../shared/criar-elemento/index.js";
 
-const Icone = (cor, imagem) =>{
+const Icone = ({ cor = 'var(--primary)', icone }) =>{
     const boxIconeAdd = CriarBoxIcone(cor, 'box-carteira-add');
-
-    const iconeCategoriaAdd = CriarIcone(
-      imagem,
-      "Botao Adicionar Carteira",
-      "icone-carteira-add",
-      'icone-carteira'
-    );
+    const iconeCategoriaAdd = CriarElemento({tipoElemento: 'i', icone: icone, classes: ['icone-carteira-add'] })
 
     boxIconeAdd.appendChild(iconeCategoriaAdd);
 

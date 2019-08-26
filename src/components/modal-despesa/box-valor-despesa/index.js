@@ -1,16 +1,15 @@
-import CriarIcone from "../shared/criar-icone/index.js";
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
+import CriarIcone from "../../shared/criar-icone/index.js";
+import CriarElemento from "../../shared/criar-elemento/index.js";
 
 const BoxTotalDespesa = valorDiscador => {
   const criarValorTotalConta = () => {
-    const valorTotalConta = CriarSpan("", "valor-total");
+    const valorTotalConta = CriarElemento({tipoElemento: 'span', classes: ['valor-total']})
     valorTotalConta.textContent = valorDiscador;
 
     return valorTotalConta;
   };
   const criarBoxTotalConta = () => {
-    const boxTotal = CriarDiv("box-total");
+    const boxTotal = CriarElemento({tipoElemento: 'div', classes: ['box-total']})
     const valorTotalConta = criarValorTotalConta();
 
     boxTotal.appendChild(valorTotalConta);

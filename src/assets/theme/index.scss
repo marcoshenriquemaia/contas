@@ -1,0 +1,24 @@
+$raul: #0099ff;
+
+.header{
+    .icon{
+        asdf
+      div{
+        background-color: darken($raul,20)
+      }
+
+      &:hover{
+        background-color: red
+      }
+    }
+    div{
+
+    }
+  }
+
+  .header > .icon > div{
+      asdf
+  }
+
+<div className="ModalAvatar" ></div>
+<ModalAvatar> </ModalAvatar>

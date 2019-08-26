@@ -1,15 +1,13 @@
 import Cabecalho from "../cabecalho/index.js";
-import BoxTotalDespesa from "../box-valor-despesa/index.js";
-import CriarDiv from "../shared/criar-div/index.js";
+import BoxTotalDespesa from "./box-valor-despesa/index.js";
 import BoxCarteira from "../box-carteira/index.js";
 import AddCategiria from "../add-categoria/index.js";
-import DataDespesa from "../data-despesa/index.js";
-import BoxParcelas from "../box-parcelas/index.js";
+import DataDespesa from "./data-despesa/index.js";
+import BoxParcelas from "./box-parcelas/index.js";
 import BoxTags from "../box-tags/index.js";
-import TextArea from "../shared/criar-textarea/index.js";
-import CriarBotao from "../shared/criar-botao/index.js";
-import CriarCadastroCategorias from "../categorias-conta/index.js";
+import CriarCadastroCategorias from "./categorias-conta/index.js";
 import Despesas from "../../pages/despesas/index.js";
+import CriarElemento from "../shared/criar-elemento/index.js";
 
 const ModalDespesa = (valorDiscador, carteira, botaoAdd, container, dashBoard) => {
     const containerList = document.querySelector(".container-lista");
@@ -22,14 +20,14 @@ const ModalDespesa = (valorDiscador, carteira, botaoAdd, container, dashBoard) =
   
     const boxTotal = BoxTotalDespesa(valorDiscador);
   
-    const wrapBoxCarteira = CriarDiv("wrap-box-carteira");
+    const wrapBoxCarteira = CriarElemento({tipoElemento: 'div', classes: ['wrap-box-carteira']})
     const boxCarteira = BoxCarteira(carteira);
     const boxCarteiraAdd = AddCategiria();
     const dataDespesa = DataDespesa();
     const boxParcelas = BoxParcelas();
     const campoTags = BoxTags();
-    const campoObs = TextArea('Obs...', 'obs');
-    const botaoConfirmar = CriarBotao("Confirmar", "botao-confirmar");
+    const campoObs = CriarElemento({ tipoElemento: 'textarea', placeholder: 'Obs...', classes: ['obs'] })
+    const botaoConfirmar = CriarElemento({ tipoElemento: 'button', conteudo: 'Confirmar', classes: ['botao-confirmar'] })
   
     container.appendChild(containerDespesa);
   

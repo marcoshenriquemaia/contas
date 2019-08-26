@@ -1,11 +1,9 @@
-import CriarDiv from "../../shared/criar-div/index.js";
-import CriarIcone from "../../shared/criar-icone/index.js";
-import CriarSpan from "../../shared/criar-span/index.js";
+import CriarElemento from "../../shared/criar-elemento/index.js";
 
 const ItemCategoria = (item, text) =>{
-    const wrapperItem = CriarDiv(`wrap-${item}`, 'wrap-all-categorias');
-    const iconeItem = CriarIcone(`${item}.png`, 'icone categoria', 'icones');
-    const textItem = CriarSpan(text, 'text-categoria');
+    const wrapperItem = CriarElemento({tipoElemento: 'div', classes: [`wrap-${item}`, 'wrap-all-categorias']})
+    const iconeItem = CriarElemento({tipoElemento: 'i', icone: item, classes: ['icone-categoria']})
+    const textItem = CriarElemento({tipoElemento: 'span', classes: ['text-categoria'], conteudo: text })
 
     wrapperItem.appendChild(iconeItem);
     wrapperItem.appendChild(textItem);

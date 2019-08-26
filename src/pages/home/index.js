@@ -2,9 +2,9 @@ import CriarDiv from "../../components/shared/criar-div/index.js";
 import CriarSpan from "../../components/shared/criar-span/index.js";
 import CriarH2 from "../../components/shared/criar-h2/index.js";
 import CriarBoxIcone from "../../components/shared/criar-box-icone/index.js";
-import Rodape from "./rodape/index.js";
+import { dashBoard } from '../../../app.js';
 
-const CriaHome = (valorDiscador, carteira) => {
+const CriaHome = () => {
   const container = document.querySelector(".container");
   const cadastroConta = CriarDiv("cadastro-conta");
 
@@ -59,15 +59,15 @@ const CriaHome = (valorDiscador, carteira) => {
 
   const valores = campoValores();
   const wrapMetas = criarWrapMetas();
-  const rodape = Rodape(valorDiscador, carteira);
 
   container.appendChild(valores);
   container.appendChild(cadastroConta);
   container.appendChild(wrapMetas);
-  container.appendChild(rodape);
 
-  
 };
+
+
+
 
 
 

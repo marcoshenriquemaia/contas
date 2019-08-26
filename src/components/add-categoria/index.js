@@ -1,27 +1,22 @@
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarBotao from "../shared/criar-botao/index.js";
-import CriarCadastroCategorias from '../categorias-conta/index.js'; 
+import CriarCadastroCategorias from '../modal-despesa/categorias-conta/index.js';
 import Icone from "./icones/indes.js";
 import WrapCategoriaNomeAdd from "./wrap-categoria-nome-add/indes.js";
+import CriarElemento from "../shared/criar-elemento/index.js";
 
 
 const AddCategiria = () => {
+    const boxCategoriaAdd = CriarElemento({ tipoElemento: 'div', classes: ['box-carteira'] });
+    const iconeCategoria = Icone({ cor: 'red', icone: 'aviso'});
+    const wrapText = WrapCategoriaNomeAdd({ categoria: 'Categoria', nome: 'Nome' });
+    const botaoAdd = CriarElemento({ tipoElemento: 'button', classes: ["add-carteira"], conteudo: '+' });
 
-const boxCategoriaAdd = CriarDiv("box-carteira");
+    boxCategoriaAdd.appendChild(iconeCategoria);
+    boxCategoriaAdd.appendChild(wrapText);
+    boxCategoriaAdd.appendChild(botaoAdd);
 
-const iconeCategoria = Icone('var(--primary)', 'bill.png');
+    botaoAdd.addEventListener('click', CriarCadastroCategorias);
 
-const wrapText = WrapCategoriaNomeAdd('Categoria','Nome');
-
-const botaoAdd = CriarBotao("+", "add-carteira");
-
-boxCategoriaAdd.appendChild(iconeCategoria);
-boxCategoriaAdd.appendChild(wrapText);
-boxCategoriaAdd.appendChild(botaoAdd);
-
-botaoAdd.addEventListener('click', CriarCadastroCategorias);
-
-return boxCategoriaAdd;
+    return boxCategoriaAdd;
 };
 
 export default AddCategiria;

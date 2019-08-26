@@ -1,31 +1,25 @@
-import CriarDiv from '../../shared/criar-div/index.js';
-import CriarBotao from '../../shared/criar-botao/index.js';
 import CriarIcone from '../../shared/criar-icone/index.js';
+import CriarElemento from '../../shared/criar-elemento/index.js';
 
 const BotoesDiscador = () => {
-    const discador = CriarDiv("discador");
-  
-    for (let i = 1; i < 10; i++) {
-      const botaoDiscador = CriarBotao(
-        i,
-        "numero-discador",
-        `numero-discador${i}`
-      );
-  
-      discador.appendChild(botaoDiscador);
-    }
-    const botaoDiscador = CriarBotao(0, "numero-discador", "numero-discador0");
-  
-    const backspace = CriarIcone(
-      "backspace-arrow.png",
-      "Backspace",
-      "backspace"
-    );
-  
+  const discador = CriarElemento({ tipoElemento: 'div', classes: ['discador'] })
+
+  for (let i = 1; i < 10; i++) {
+    const botaoDiscador = CriarElemento({ tipoElemento: 'button', conteudo: i, classes: ["numero-discador", `numero-discador${i}`] })
     discador.appendChild(botaoDiscador);
-    discador.appendChild(backspace);
-  
-    return discador;
+  }
+  const botaoDiscador = CriarElemento({tipoElemento: 'button',conteudo: '0', classes: ["numero-discador", "numero-discador0"]})
+
+  const backspace = CriarIcone(
+    "backspace-arrow.png",
+    "Backspace",
+    "backspace"
+  );
+
+  discador.appendChild(botaoDiscador);
+  discador.appendChild(backspace);
+
+  return discador;
 };
-  
+
 export default BotoesDiscador; 

@@ -1,7 +1,7 @@
-import CriarDiv from '../criar-div/index.js';
+import CriarElemento from '../criar-elemento/index.js';
 
 const CriarBoxIcone = (cor, classe) => {
-  const elemento = CriarDiv("box-icone-carteira");
+  const elemento = CriarElemento({tipoElemento: 'div', classes: ['box-icone-carteira']});
   elemento.classList.add(classe);
   elemento.style.backgroundColor = cor;
 

@@ -1,25 +1,23 @@
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
-import CriarBoxIcone from "../shared/criar-box-icone/index.js";
-import CriarIcone from "../shared/criar-icone/index.js";
 import WrapCarteiraNome from "./wrapper-carteira-nome/index.js";
+import CriarElemento from "../shared/criar-elemento/index.js";
 
 
 const BoxCarteira = carteira => {
 
   const criarValorCarteira = valor => {
-    const valorCarteira = CriarSpan(`R$${valor}`, "valor-carteira");
+    const valorCarteira = CriarElemento({tipoElemento: 'span', conteudo: `R$${valor}`, classes: ['valor-carteira']})
     return valorCarteira;
   };
 
   const { nome, tipo, valor, cor } = carteira;
 
+
   const cadastroConta = document.querySelector(".cadastro-conta");
-  const boxCarteira = CriarDiv("box-carteira");
+  const boxCarteira = CriarElemento({tipoElemento: 'div', classes: ['box-carteira']})
   const wrapCarteiraNome = WrapCarteiraNome(nome, tipo, boxCarteira);
   const valorCarteira = criarValorCarteira(valor);
-  const boxIcone = CriarBoxIcone(cor);
-  const icone = CriarIcone("add (2).png", "Icone Carteira", "icone-carteira");
+  const boxIcone = CriarElemento({tipoElemento: 'div', cor: cor, classes: ['box-icone-carteira']})
+  const icone = CriarElemento({tipoElemento: 'i', icone: 'aviso', classes: ['icone-carteira']})
 
   boxCarteira.appendChild(boxIcone);
   boxIcone.appendChild(icone);

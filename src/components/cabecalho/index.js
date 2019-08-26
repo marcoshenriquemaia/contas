@@ -1,24 +1,13 @@
 import CriarSpan from "../shared/criar-span/index.js";
+import CriarElemento from "../shared/criar-elemento/index.js";
 
 const Cabecalho = () => {
     const cabecalho = document.createElement("header");
     cabecalho.classList.add("secoes-cabecalho");
 
-    const receita = CriarSpan(
-        "Receita",
-        "receita",
-        "receita-despesa-transferencia"
-    );
-    const despesa = CriarSpan(
-        "Despesa",
-        "despesa",
-        "receita-despesa-transferencia"
-    );
-    const trasnferencia = CriarSpan(
-        "Transferência",
-        "transferencia",
-        "receita-despesa-transferencia"
-    );
+    const receita = CriarElemento({ tipoElemento: 'span', conteudo: 'Receita', classes: ["receita", "receita-despesa-transferencia"] })
+    const despesa = CriarElemento({ tipoElemento: 'span', conteudo: 'Despesa', classes: ["despesa", "receita-despesa-transferencia"] })
+    const trasnferencia = CriarElemento({ tipoElemento: 'span', conteudo: 'Transferência', classes: ["transferencia", "receita-despesa-transferencia"] })
 
     cabecalho.appendChild(receita);
     cabecalho.appendChild(despesa);

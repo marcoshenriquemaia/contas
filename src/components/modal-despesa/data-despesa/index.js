@@ -1,6 +1,6 @@
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
-import CriarInput from "../shared/criar-input/index.js";
+import CriarDiv from "../../shared/criar-div/index.js";
+import CriarSpan from "../../shared/criar-span/index.js";
+import CriarInput from "../../shared/criar-input/index.js";
 
 const DataDespesa = () => {
     const dataDespesa = CriarDiv("data");

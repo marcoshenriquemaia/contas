@@ -1,19 +1,15 @@
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
-import CriarIcone from "../shared/criar-icone/index.js";
-import MudaIcone from "../muda-icone/index.js";
+import CriarIcone from "../../shared/criar-icone/index.js";
+import MudaIcone from "../../muda-icone/index.js";
+import CriarElemento from "../../shared/criar-elemento/index.js";
 
 
 const BoxParcelas = () => {
   let checkbox = false;
 
   const wrapCheckboxParcelas = () => {
-    const wrapCheckboxParcelas = CriarDiv("wrap-checkbox-parcelas");
+    const wrapCheckboxParcelas = CriarElemento({tipoElemento: 'div', classes: ['wrap-checkbox-parcelas']});
     const checkboxParcelas = CriarIcone('checkbox.png', 'icone', 'checkbox-parcelas');
-    const textCheckboxParcelas = CriarSpan(
-      "Dividir-valor",
-      "text-checkbox-parcelas"
-    );
+    const textCheckboxParcelas = CriarElemento({tipoElemento: 'span', conteudo: 'Dividir-valor', classes: ['text-checkbox-parcelas']})
 
     wrapCheckboxParcelas.appendChild(textCheckboxParcelas);
     wrapCheckboxParcelas.appendChild(checkboxParcelas);
@@ -30,19 +26,12 @@ const BoxParcelas = () => {
   };
 
   const campoQuantidadeParcelas = () => {
-    const campoParcelas = CriarDiv("campo-parcelas");
-    const textQuantidadeParcelas = CriarSpan(
-      "1x",
-      "text-quantidade-parcelas"
-    );
-
-    campoParcelas.appendChild(textQuantidadeParcelas);
-
+    const campoParcelas = CriarElemento({ tipoElemento: 'input', tipo: 'number', placeholder: '1 x', classes: ['campo-parcelas'] })
     return campoParcelas;
   };
 
-  const boxParcelas = CriarDiv("parcelas");
-  const textParcelas = CriarSpan("Parcelas", "text-parcelas");
+  const boxParcelas = CriarElemento({ tipoElemento: 'div', classes: ['parcelas']})
+  const textParcelas = CriarElemento({tipoElemento: 'span', conteudo: 'Repetir', classes: ['text-parcelas']})
   const campoParcelas = campoQuantidadeParcelas();
   const checkboxParcelas = wrapCheckboxParcelas();
 
