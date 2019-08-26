@@ -1,16 +1,13 @@
-import CriarDiv from "../../components/shared/criar-div/index.js";
-import CriarSpan from "../../components/shared/criar-span/index.js";
-import CriarH2 from "../../components/shared/criar-h2/index.js";
 import CriarBoxIcone from "../../components/shared/criar-box-icone/index.js";
-import { dashBoard } from '../../../app.js';
+import CriarElemento from "../../components/shared/criar-elemento/index.js";
 
 const CriaHome = () => {
   const container = document.querySelector(".container");
-  const cadastroConta = CriarDiv("cadastro-conta");
+  const cadastroConta = CriarElemento({tipoElemento: 'div', classes: ["cadastro-conta"]})
 
   const campoValores = () => {
-    const boxValores = CriarDiv("campo-valores");
-    const valores = CriarSpan("R$ 100.000,00", "valores");
+    const boxValores = CriarElemento({tipoElemento: 'div', classes: ['campo-valores']})
+    const valores = CriarElemento({tipoElemento: 'span', conteudo: 'R$ 100.000,00', classes: ['valores']});
 
     boxValores.appendChild(valores);
 
@@ -18,9 +15,9 @@ const CriaHome = () => {
   };
 
   const criarWrapMetas = () => {
-    const boxMetas = CriarDiv("box-metas");
+    const boxMetas = CriarElemento({tipoElemento: 'div', classes: ['box-metas']})
     const wrapMeta = criaWrapMeta();
-    const textMetas = CriarH2("Metas", "text-metas");
+    const textMetas = CriarElemento({tipoElemento: 'h2', conteudo: 'Metas', classes: ['text-metas']})
 
     boxMetas.appendChild(textMetas);
     boxMetas.appendChild(wrapMeta);
@@ -30,7 +27,7 @@ const CriaHome = () => {
 
   const criaWrapMeta = () => {
     const boxIcone = CriarBoxIcone("var(--primary)", "icone-meta");
-    const wrapMeta = CriarDiv("wrap-meta");
+    const wrapMeta = CriarElemento({tipoElemento: 'div', classes: ['wrap-meta']})
     const barraMeta = criarWrapBarraMeta();
     const valorMeta = criarValorMeta();
 
@@ -41,9 +38,9 @@ const CriaHome = () => {
     return wrapMeta;
   };
   const criarWrapBarraMeta = () => {
-    const wrapTituloBarra = CriarDiv("wrap-titulo-barra");
-    const titulo = CriarH2("Reserva", "text-nome-meta");
-    const barra = CriarDiv("barra-progresso");
+    const wrapTituloBarra = CriarElemento({tipoElemento: 'div', classes: ["wrap-titulo-barra"]})
+    const titulo = CriarElemento({tipoElemento: 'h2', conteudo: 'Reserva', classes: ['text-nome-meta']})
+    const barra = CriarElemento({tipoElemento: 'div', classes: ['barra-progresso']})
 
     wrapTituloBarra.appendChild(titulo);
     wrapTituloBarra.appendChild(barra);
@@ -52,7 +49,7 @@ const CriaHome = () => {
   };
 
   const criarValorMeta = () => {
-    const valorMeta = CriarSpan("R$ 100.000,00", "valor-meta");
+    const valorMeta = CriarElemento({tipoElemento: 'span', conteudo: 'R$ 100.000,00', classes: ['valor-meta']})
 
     return valorMeta;
   };

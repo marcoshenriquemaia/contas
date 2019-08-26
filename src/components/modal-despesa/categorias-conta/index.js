@@ -1,7 +1,6 @@
 import BoxCategorias from '../../box-categorias/index.js';
 import { DictionaryIcones } from '../../../domain/dictionary-icons/index.js';
 import MudaI from '../../muda-i/index.js';
-import CriarDiv from '../../shared/criar-div/index.js';
 import CriarElemento from '../../shared/criar-elemento/index.js';
 
 const CriarCadastroCategorias = () => {

@@ -1,5 +1,3 @@
-import Cabecalho from "../cabecalho/index.js";
-import BoxTotalDespesa from "./box-valor-despesa/index.js";
 import BoxCarteira from "../box-carteira/index.js";
 import AddCategiria from "../add-categoria/index.js";
 import DataDespesa from "./data-despesa/index.js";
@@ -8,6 +6,8 @@ import BoxTags from "../box-tags/index.js";
 import CriarCadastroCategorias from "./categorias-conta/index.js";
 import Despesas from "../../pages/despesas/index.js";
 import CriarElemento from "../shared/criar-elemento/index.js";
+import Cabecalho from "../cabecalho/index.js";
+import BoxTotalDespesa from "./box-valor-despesa/index.js";
 
 const ModalDespesa = (valorDiscador, carteira, botaoAdd, container, dashBoard) => {
     const containerList = document.querySelector(".container-lista");

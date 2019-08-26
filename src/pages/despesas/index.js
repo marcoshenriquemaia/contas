@@ -1,20 +1,17 @@
 import CriarIcone from "../../components/shared/criar-icone/index.js";
-import CriarDiv from "../../components/shared/criar-div/index.js";
-import CriarSpan from "../../components/shared/criar-span/index.js";
 import {dashBoard} from '../../../app.js';
+import CriarElemento from "../../components/shared/criar-elemento/index.js";
 
 const Despesas = () => {
   const container = document.querySelector('.container');
   const containerDespesa = document.querySelector(".container-despesa");
   container.removeChild(containerDespesa);
 
-  const containerLista = document.createElement("section");
-  containerLista.classList.add("container-lista");
-
-  const campoValores = CriarSpan("R$ 100.000,00", "campo-valores", "valores");
+  const containerLista = CriarElemento({tipoElemento: 'section', classes: ['container-lista']})
+  const campoValores = CriarElemento({tipoElemento: 'span', conteudo: 'R$ 100.000,00', classes: ["campo-valores", "valores"]})
   const iconeValor = CriarIcone("bill.png", "Icone valores", "icones");
-  const containerDataConta = CriarDiv("container-data-conta");
-  const textData = CriarSpan("13/08", "text-data-lista");
+  const containerDataConta = CriarElemento({tipoElemento: 'div', classes: ['container-data-conta']})
+  const textData = CriarElemento({tipoElemento: 'span', conteudo: '13/08', classes: ['text-data-lista']})
 
   container.appendChild(containerLista);
 
@@ -33,7 +30,7 @@ const Despesas = () => {
     } = dashBoardItem;
   
     const iconeDespesa = () => {
-      const boxIcone = CriarDiv("box-icone-carteira");
+      const boxIcone = CriarElemento({tipoElemento: 'div', classes: ['box-icone-carteira']})
       const icone = CriarIcone(`${principal}.png`, "Icone", "icones");
   
       boxIcone.appendChild(icone);
@@ -42,9 +39,9 @@ const Despesas = () => {
     };
   
     const wrapTipoConta = () => {
-      const wrapTipoDespesa = CriarDiv("wrap-tipo-conta", "wrap-text-conta");
-      const textTipo = CriarSpan(principal, "all-text-conta", "text-bold");
-      const textConta = CriarSpan(sub, "all-texte-conta");
+      const wrapTipoDespesa = CriarElemento({tipoElemento: 'div', classes: ["wrap-tipo-conta", "wrap-text-conta"]})
+      const textTipo = CriarElemento({tipoElemento: 'span', conteudo: principal, classes: ["all-text-conta", "text-bold"]})
+      const textConta = CriarElemento({tipoElemento: 'span', conteudo: sub, classes: ["all-texte-conta"]})
   
       wrapTipoDespesa.appendChild(textTipo);
       wrapTipoDespesa.appendChild(textConta);
@@ -53,12 +50,9 @@ const Despesas = () => {
     };
   
     const wrapStatusPagamento = () => {
-      const wrapStatusPagamento = CriarDiv(
-        "wrap-status-pagamento",
-        "wrap-text-conta"
-      );
-      const valorDespesa = CriarSpan(`R$ ${valor}`, "all-text-conta", "text-bold");
-      const statusDespesa = CriarSpan(status ? 'Pago' : 'Não pago', "all-text-conta");
+      const wrapStatusPagamento = CriarElemento({tipoElemento: 'div', classes: ["wrap-status-pagamento","wrap-text-conta"]})
+      const valorDespesa = CriarElemento({tipoElemento: 'span', conteudo: `R$ ${valor}`, classes: ["all-text-conta", "text-bold"]})
+      const statusDespesa = CriarElemento({tipoElemento: 'span', conteudo: status ? 'Pago' : 'Não pago', classes: ["all-text-conta"]})
   
       wrapStatusPagamento.appendChild(valorDespesa);
       wrapStatusPagamento.appendChild(statusDespesa);
@@ -66,8 +60,8 @@ const Despesas = () => {
       return wrapStatusPagamento;
     };
   
-    const conta = CriarDiv('conta');
-    const boxTextDespesa = CriarDiv("box-text-conta");
+    const conta = CriarElemento({tipoElemento: 'div', classes: ['conta']})
+    const boxTextDespesa = CriarElemento({tipoElemento: 'div', classes: ["box-text-conta"]})
     const icone = iconeDespesa();
     const wrapTipoContaDespesa = wrapTipoConta();
     const wrapStatusPagamentoDespesa = wrapStatusPagamento();
@@ -76,7 +70,6 @@ const Despesas = () => {
     conta.appendChild(boxTextDespesa);
     boxTextDespesa.appendChild(wrapTipoContaDespesa);
     boxTextDespesa.appendChild(wrapStatusPagamentoDespesa);
-    dashBoard.push({nada: 'nada nada'})
     
   return conta;
   

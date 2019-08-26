@@ -1,5 +1,3 @@
-import CriarDiv from "../shared/criar-div/index.js";
-import CriarSpan from "../shared/criar-span/index.js";
 import CriarTag from "./tag/index.js";
 import CriarElemento from "../shared/criar-elemento/index.js";
 

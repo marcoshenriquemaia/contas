@@ -1,21 +1,18 @@
-import CriarDiv from "../../../components/shared/criar-div/index.js";
-import CriarBotao from "../../../components/shared/criar-botao/index.js";
 import CriarIcone from "../../../components/shared/criar-icone/index.js";
 import Discador from "../../../components/discador/index.js";
-import CriarI from "../../../components/shared/criar-i/index.js";
+import CriarElemento from "../../../components/shared/criar-elemento/index.js";
 
 const Rodape = ({valorDiscador, carteira, dashBoard}) =>{
     const container = document.querySelector('.container');
-    const boxRodape = CriarDiv('rodape');
-    const botaoAdd = CriarBotao('', 'button-add');
-    const wrapBoxEsquerda = CriarDiv('wrap-div-left');
-    const wrapBoxDireita = CriarDiv('wrap-div-right');
+    const boxRodape = CriarElemento({tipoElemento: 'div', classes: ['rodape']})
+    const botaoAdd = CriarElemento({tipoElemento: 'button', classes: ['button-add']})
+    const wrapBoxEsquerda = CriarElemento({tipoElemento: 'div', classes: ['wrap-div-left']})
+    const wrapBoxDireita = CriarElemento({tipoElemento: 'div', classes: ['wrap-div-right']})
     const imagemAdd = CriarIcone('add (2).png','', 'imagem-add');
-    // const icone1 = CriarIcone('house.png','home', 'icones', 'icone-1')
-    const icone1 = CriarI({icone: 'fa-home'});
-    const icone2 = CriarI({icone: 'fa-chart-line'})
-    const icone3 = CriarI({icone: 'fa-user-friends'})
-    const icone4 = CriarI({icone: 'fa-cog'});  
+    const icone1 = CriarElemento({tipoElemento: 'i', icone: ['home']})
+    const icone2 = CriarElemento({tipoElemento: 'i', icone: ['estatisticas']})
+    const icone3 = CriarElemento({tipoElemento: 'i', icone: ['contaCompartilhada']})
+    const icone4 = CriarElemento({tipoElemento: 'i', icone: ['config']})
 
     boxRodape.appendChild(wrapBoxEsquerda);
     boxRodape.appendChild(botaoAdd);
