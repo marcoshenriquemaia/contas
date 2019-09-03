@@ -9,7 +9,7 @@ import CriarElemento from "../shared/criar-elemento/index.js";
 import Cabecalho from "../cabecalho/index.js";
 import BoxTotalDespesa from "./box-valor-despesa/index.js";
 
-const ModalDespesa = (valorDiscador, carteira, botaoAdd, container, dashBoard) => {
+const ModalDespesa = ({valorDiscador, carteira, botaoAdd, container, dashBoard}) => {
     const containerList = document.querySelector(".container-lista");
     containerList && containerList.remove();
   
@@ -22,7 +22,7 @@ const ModalDespesa = (valorDiscador, carteira, botaoAdd, container, dashBoard) =
   
     const wrapBoxCarteira = CriarElemento({tipoElemento: 'div', classes: ['wrap-box-carteira']})
     const boxCarteira = BoxCarteira(carteira);
-    const boxCarteiraAdd = AddCategiria();
+    const boxCarteiraAdd = AddCategiria.build();
     const dataDespesa = DataDespesa();
     const boxParcelas = BoxParcelas();
     const campoTags = BoxTags();

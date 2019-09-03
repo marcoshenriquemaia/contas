@@ -1,9 +1,10 @@
 import CriarElemento from "../../shared/criar-elemento/index.js";
 
-const WrapCarteiraNome = (nome, tipo, boxCarteira) => {
-    const wrapCarteiraNome = CriarElemento({tipoElemento: 'div', classes: ["wrap-carteira-nome"]})
-    const textCarteira =  CriarElemento({tipoElemento: 'span', conteudo: tipo, classes: ["text-carteira"]})
-    const textNome = CriarElemento({tipoElemento: 'span', conteudo: nome, classes: ['text-nome']})
+const WrapCarteiraNome = {
+  build: ({nome, tipo, boxCarteira}) => {
+    const wrapCarteiraNome = CriarElemento({ tipoElemento: 'div', classes: ["wrap-carteira-nome"] })
+    const textCarteira = CriarElemento({ tipoElemento: 'span', conteudo: tipo, classes: ["text-carteira"] })
+    const textNome = CriarElemento({ tipoElemento: 'span', conteudo: nome, classes: ['text-nome'] })
 
     wrapCarteiraNome.appendChild(textCarteira);
     wrapCarteiraNome.appendChild(textNome);
@@ -11,12 +12,18 @@ const WrapCarteiraNome = (nome, tipo, boxCarteira) => {
     boxCarteira.addEventListener('click', () => boxCarteiraClick(boxCarteira));
 
     return wrapCarteiraNome;
-  };
+  },
+  remove: () =>{
+   const wrapCarteiraNome = document.querySelector('.wrap-carteira-nome');
 
-  const boxCarteiraClick = (boxCarteira) =>{
-    boxCarteira.classList.toggle('box-carteira-2')
+   wrapCarteiraNome && wrapCarteiraNome.remove();
   }
 
-  export default WrapCarteiraNome; 
+}
 
-  
+const boxCarteiraClick = (boxCarteira) => {
+  boxCarteira.classList.toggle('box-carteira-2')
+}
+
+export default WrapCarteiraNome;
+

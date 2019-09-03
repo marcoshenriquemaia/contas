@@ -34,7 +34,7 @@ const Discador = ({valorDiscador, carteira, botaoAdd, dashBoard}) => {
     const containerDiscador = document.querySelector(".container-discador");
     container.removeChild(containerDiscador);
     container.removeEventListener('click', clickDiscador);
-    ModalDespesa(valorDiscador, carteira, botaoAdd, container, dashBoard);
+    ModalDespesa({valorDiscador, carteira, botaoAdd, container, dashBoard});
   };
 };
 

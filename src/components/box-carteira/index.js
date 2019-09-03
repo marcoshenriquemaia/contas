@@ -14,7 +14,7 @@ const BoxCarteira = carteira => {
 
   const cadastroConta = document.querySelector(".cadastro-conta");
   const boxCarteira = CriarElemento({tipoElemento: 'div', classes: ['box-carteira']})
-  const wrapCarteiraNome = WrapCarteiraNome(nome, tipo, boxCarteira);
+  const wrapCarteiraNome = WrapCarteiraNome.build({nome, tipo, boxCarteira});
   const valorCarteira = criarValorCarteira(valor);
   const boxIcone = CriarElemento({tipoElemento: 'div', cor: cor, classes: ['box-icone-carteira']})
   const icone = CriarElemento({tipoElemento: 'i', icone: 'aviso', classes: ['icone-carteira']})
