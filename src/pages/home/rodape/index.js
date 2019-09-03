@@ -24,7 +24,8 @@ const Rodape = ({valorDiscador, carteira, dashBoard}) =>{
     wrapBoxDireita.appendChild(icone4);
 
     botaoAdd.addEventListener("click", e => {
-        Discador({valorDiscador, carteira, botaoAdd, dashBoard});
+        const discador = Discador.build({valorDiscador, carteira, botaoAdd, dashBoard});
+        container.appendChild(discador);
     });
 
     icone1.addEventListener('click', () => {
