@@ -7,7 +7,7 @@ const Discador = ({valorDiscador, carteira, botaoAdd, dashBoard}) => {
   const container = document.querySelector('.container');
 
   const containerDiscador = CriarElemento({tipoElemento: 'section', classes: ['container-discador']})
-  const cabecalho = Cabecalho();
+  const cabecalho = Cabecalho.build();
   const campoValoresDiscador = CriarElemento({tipoElemento: 'span', conteudo: 'R$', classes: ['campo-valores-discador']})
   const botaoContinuar = CriarElemento({ tipoElemento: 'button', conteudo: 'Continuar', classes: ['botao-discador'] })
 

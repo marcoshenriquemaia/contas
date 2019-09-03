@@ -16,7 +16,7 @@ const ModalDespesa = ({valorDiscador, carteira, botaoAdd, container, dashBoard})
     const containerDespesa = document.createElement("section");
     containerDespesa.classList.add("container-despesa");
   
-    const cabecalho = Cabecalho();
+    const cabecalho = Cabecalho.build();
   
     const boxTotal = BoxTotalDespesa(valorDiscador);
   
