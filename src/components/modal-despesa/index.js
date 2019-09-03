@@ -25,7 +25,7 @@ const ModalDespesa = ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
   const boxCarteira = BoxCarteira.build({ carteira });
   const boxCarteiraAdd = AddCategiria.build();
   const dataDespesa = DataDespesa();
-  const boxParcelas = BoxParcelas();
+  const boxParcelas = BoxParcelas.build();
   const campoTags = BoxTags.build();
   const campoObs = CriarElemento({ tipoElemento: 'textarea', placeholder: 'Obs...', classes: ['obs'] })
   const botaoConfirmar = CriarElemento({ tipoElemento: 'button', conteudo: 'Confirmar', classes: ['botao-confirmar'] })
