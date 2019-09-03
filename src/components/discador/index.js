@@ -16,7 +16,7 @@ const Discador = {
     containerDiscador.appendChild(botaoContinuar);
 
     containerDiscador.addEventListener("click", e => clickDiscador({ target: e.target, valorDiscador }));
-    botaoContinuar.addEventListener("click", () => clickContinuarDiscador({ valorDiscador: campoValoresDiscador.textContent, campoValoresDiscador, carteira, botaoAdd, dashBoard }))
+    botaoContinuar.addEventListener("click", () => clickContinuarDiscador({ carteira, botaoAdd, dashBoard }))
 
     return containerDiscador;
   },
@@ -31,11 +31,14 @@ const Discador = {
   }
 };
 
-const clickContinuarDiscador = ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
+const clickContinuarDiscador = ({carteira, botaoAdd, dashBoard }) => {
   const containerDiscador = document.querySelector(".container-discador");
+  const campoValorDiscador = document.querySelector('.campo-valores-discador')
+  const container = document.querySelector('.container');
+  const despesa = ModalDespesa.build({valorDiscador: campoValorDiscador.textContent, carteira, botaoAdd, dashBoard });
+  container.appendChild(despesa);
   Discador.remove();
   containerDiscador.removeEventListener('click', clickDiscador);
-  ModalDespesa({ valorDiscador, carteira, botaoAdd, dashBoard });
 };
 
 const clickDiscador = ({ target, valorDiscador }) => {

@@ -9,45 +9,41 @@ import CriarElemento from "../shared/criar-elemento/index.js";
 import Cabecalho from "../cabecalho/index.js";
 import BoxTotalDespesa from "./box-valor-despesa/index.js";
 
-const ModalDespesa = ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
-  const container = document.querySelector('.container');
-  const containerList = document.querySelector(".container-lista");
-  containerList && containerList.remove();
+const ModalDespesa = {
+  build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
+    const containerDespesa = CriarElemento({ tipoElemento: 'section', classes: ['container-despesa'] });
+    const cabecalho = Cabecalho.build();
+    const boxTotal = BoxTotalDespesa.build({ valorDiscador });
+    const wrapBoxCarteira = CriarElemento({ tipoElemento: 'div', classes: ['wrap-box-carteira'] })
+    const boxCarteira = BoxCarteira.build({ carteira });
+    const boxCarteiraAdd = AddCategiria.build();
+    const dataDespesa = DataDespesa.build();
+    const boxParcelas = BoxParcelas.build();
+    const campoTags = BoxTags.build();
+    const campoObs = CriarElemento({ tipoElemento: 'textarea', placeholder: 'Obs...', classes: ['obs'] })
+    const botaoConfirmar = CriarElemento({ tipoElemento: 'button', conteudo: 'Confirmar', classes: ['botao-confirmar'] })
 
-  const containerDespesa = document.createElement("section");
-  containerDespesa.classList.add("container-despesa");
+    containerDespesa.appendChild(boxTotal);
+    containerDespesa.appendChild(cabecalho);
+    containerDespesa.appendChild(wrapBoxCarteira);
+    containerDespesa.appendChild(dataDespesa);
+    containerDespesa.appendChild(boxParcelas);
+    containerDespesa.appendChild(campoTags);
+    containerDespesa.appendChild(campoObs);
+    containerDespesa.appendChild(botaoConfirmar);
 
-  const cabecalho = Cabecalho.build();
+    wrapBoxCarteira.appendChild(boxCarteira);
+    wrapBoxCarteira.appendChild(boxCarteiraAdd);
 
-  const boxTotal = BoxTotalDespesa(valorDiscador);
+    botaoAdd.addEventListener("click", CriarCadastroCategorias)
+    botaoConfirmar.addEventListener("click", () => Despesas(dashBoard))
 
-  const wrapBoxCarteira = CriarElemento({ tipoElemento: 'div', classes: ['wrap-box-carteira'] })
-  const boxCarteira = BoxCarteira.build({ carteira });
-  const boxCarteiraAdd = AddCategiria.build();
-  const dataDespesa = DataDespesa();
-  const boxParcelas = BoxParcelas.build();
-  const campoTags = BoxTags.build();
-  const campoObs = CriarElemento({ tipoElemento: 'textarea', placeholder: 'Obs...', classes: ['obs'] })
-  const botaoConfirmar = CriarElemento({ tipoElemento: 'button', conteudo: 'Confirmar', classes: ['botao-confirmar'] })
-
-  container.appendChild(containerDespesa);
-
-  containerDespesa.appendChild(boxTotal);
-  containerDespesa.appendChild(cabecalho);
-  containerDespesa.appendChild(wrapBoxCarteira);
-  containerDespesa.appendChild(dataDespesa);
-  containerDespesa.appendChild(boxParcelas);
-  containerDespesa.appendChild(campoTags);
-  containerDespesa.appendChild(campoObs);
-  containerDespesa.appendChild(botaoConfirmar);
-
-  wrapBoxCarteira.appendChild(boxCarteira);
-  wrapBoxCarteira.appendChild(boxCarteiraAdd);
-
-  botaoAdd.addEventListener("click", CriarCadastroCategorias)
-  botaoConfirmar.addEventListener("click", () => Despesas(dashBoard))
-
-  return containerDespesa;
+    return containerDespesa;
+  }, 
+  remove: () =>{
+    const containerDespesa = document.querySelector('.container-despesa');
+    containerDespesa && containerDespesa.remove();
+  }
 };
 
 export default ModalDespesa;

@@ -1,29 +1,23 @@
 import CriarIcone from "../../shared/criar-icone/index.js";
-import CriarElemento from "../../shared/criar-elemento/index.js";
+import BoxTotalConta from "./box-total-conta/index.js";
 
-const BoxTotalDespesa = valorDiscador => {
-  const criarValorTotalConta = () => {
-    const valorTotalConta = CriarElemento({tipoElemento: 'span', classes: ['valor-total']})
-    valorTotalConta.textContent = valorDiscador;
+const BoxTotalDespesa = {
+  build: ({ valorDiscador }) => {
+    const boxTotal = BoxTotalConta.build({ valorDiscador });
+    const excluirTotal = CriarIcone("delete (1).png", "Voltar", "botao-excluir");
 
-    return valorTotalConta;
-  };
-  const criarBoxTotalConta = () => {
-    const boxTotal = CriarElemento({tipoElemento: 'div', classes: ['box-total']})
-    const valorTotalConta = criarValorTotalConta();
-
-    boxTotal.appendChild(valorTotalConta);
+    boxTotal.appendChild(excluirTotal);
+    excluirTotal.addEventListener("click", clickExcluirTotal);
 
     return boxTotal;
-  };
+  },
+  remove: () => {
+    const boxTotal = document.querySelector('.box-total')
+    const excluirTotal = document.querySelector('.botao-excluir');
 
-  const boxTotal = criarBoxTotalConta(valorDiscador);
-  const excluirTotal = CriarIcone("delete (1).png", "Voltar", "botao-excluir");
-
-  boxTotal.appendChild(excluirTotal);
-  excluirTotal.addEventListener("click", clickExcluirTotal);
-
-  return boxTotal;
+    boxTotal && boxTotal.remove();
+    excluirTotal && excluirTotal.removeEventListener('click', clickExcluirTotal);
+  }
 };
 
 const clickExcluirTotal = () => {
