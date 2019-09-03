@@ -6,7 +6,7 @@ import CriarElemento from '../../shared/criar-elemento/index.js';
 const CriarCadastroCategorias = () => {
   const containerDespesa = document.querySelector(".container-despesa");
   const cadastroCategorias = CriarElemento({tipoElemento: 'div', classes: ['cadastro-carteira']})
-  const boxCategorias = BoxCategorias();
+  const boxCategorias = BoxCategorias.build();
   const containerCadastroCategorias = CriarElemento({tipoElemento: 'div', classes: ['container-cadastro-categorias']})
 
 

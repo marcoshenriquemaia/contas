@@ -21,7 +21,7 @@ const ModalDespesa = ({valorDiscador, carteira, botaoAdd, container, dashBoard})
     const boxTotal = BoxTotalDespesa(valorDiscador);
   
     const wrapBoxCarteira = CriarElemento({tipoElemento: 'div', classes: ['wrap-box-carteira']})
-    const boxCarteira = BoxCarteira(carteira);
+    const boxCarteira = BoxCarteira.build({carteira});
     const boxCarteiraAdd = AddCategiria.build();
     const dataDespesa = DataDespesa();
     const boxParcelas = BoxParcelas();
