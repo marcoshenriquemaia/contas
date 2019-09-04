@@ -215,17 +215,6 @@ body {
     color: var(--primary);
 }
 
-.botao-excluir {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 0.8em;
-    height: 0.8em;
-    position: absolute;
-    font-size: 1.2em;
-    left: 1rem;
-}
-
 .box-carteira-onclick {
     border: solid 5px red;
 }
