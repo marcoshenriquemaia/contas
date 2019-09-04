@@ -1,0 +1,10 @@
+.valor-total {
+    width: 45%;
+    height: 55%;
+    background-color: var(--tercearia);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7em;
+    font-size: 1.2em;
+}
