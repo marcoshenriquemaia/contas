@@ -1,0 +1,24 @@
+.box-carteira {
+    display: flex;
+    width: 95%;
+    min-height: 35%;
+    box-sizing: border-box;
+    background-color: var(--tercearia);
+    border-radius: 0.7em;
+    align-items: center;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.add-carteira {
+    color: var(--primary);
+    font-size: 2em;
+    background-color: #fff;
+    border-radius: 100em;
+    transform: translateX(2.5em);
+    border: none;
+    width: 2.3rem;
+    height: 2.3rem;
+    font-weight: 1000;
+    font-family: 'Courier New', Courier, monospace;
+}

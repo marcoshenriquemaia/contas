@@ -1,4 +1,4 @@
-import CriarElemento from "../../components/shared/criar-elemento";
+import CriarElemento from "../../components/shared/criar-elemento/index.js";
 
 const ImportCss = ({path}) =>{
     const head = document.querySelector('head');

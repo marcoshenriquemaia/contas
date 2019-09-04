@@ -1,0 +1,29 @@
+.wrap-all-categorias {
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    background-color: var(--tercearia);
+    justify-content: space-evenly;
+    margin-bottom: .2em;
+    margin-top: .2em;
+    border-radius: 1em;
+}
+
+.icone-categoria {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    vertical-align: center;
+    padding: 10px;
+    border-radius: 100em;
+    background-color: #fff;
+}
+
+.text-categoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}

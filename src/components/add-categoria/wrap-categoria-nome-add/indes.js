@@ -1,4 +1,7 @@
 import CriarElemento from "../../shared/criar-elemento/index.js";
+import ImportCss from "../../../utils/import-css/index.js";
+
+ImportCss({path: 'add-categoria/wrap-categoria-nome-add'});
 
 const WrapCategoriaNomeAdd = {
     build: ({ categoria, nome }) => {

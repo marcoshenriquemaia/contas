@@ -2,6 +2,9 @@ import CriarCadastroCategorias from '../modal-despesa/categorias-conta/index.js'
 import Icone from "./icones/indes.js";
 import WrapCategoriaNomeAdd from "./wrap-categoria-nome-add/indes.js";
 import CriarElemento from "../shared/criar-elemento/index.js";
+import ImportCss from '../../utils/import-css/index.js';
+
+ImportCss({path: 'add-categoria'});
 
 const AddCategiria = {
     build: () => {

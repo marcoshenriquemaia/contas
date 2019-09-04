@@ -12,7 +12,7 @@ const Icone = {
   },
   remove: () =>{
     const boxIconeAdd = document.querySelector('.box-carteira-add');
-    boxIconeAdd && boxIconeAdd.remove();
+    boxIconeAdd &&  boxIconeAdd.remove();
   }
 }
 
