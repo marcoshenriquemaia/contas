@@ -1,0 +1,30 @@
+.receita-despesa-transferencia {
+    height: 100%;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.receita {
+    width: 30%;
+}
+
+.despesa {
+    width: 30%;
+}
+
+.transferencia {
+    width: 40%;
+}
+
+.secoes-cabecalho {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    position: fixed;
+    top: 0;
+    background-color: var(--primary);
+}

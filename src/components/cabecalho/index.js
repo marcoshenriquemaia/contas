@@ -1,4 +1,7 @@
 import CriarElemento from "../shared/criar-elemento/index.js";
+import ImportCss from "../../utils/import-css/index.js";
+
+ImportCss({ path: 'cabecalho' })
 
 const Cabecalho = {
     build: () => {
@@ -13,7 +16,7 @@ const Cabecalho = {
 
         return cabecalho;
     },
-    remove: () =>{
+    remove: () => {
         const cabecalho = document.querySelector('.secoes-cabecalho');
         cabecalho && cabecalho.remove();
     }
@@ -21,4 +24,3 @@ const Cabecalho = {
 
 
 export default Cabecalho;
-

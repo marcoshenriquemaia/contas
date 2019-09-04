@@ -1,0 +1,18 @@
+.text-tag {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 0.3em;
+    height: 1.2em;
+    color: #fff;
+    padding: 0.2em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    text-align: center;
+}
+
+.img-delete-tag {
+    margin-left: 0.2em;
+    width: 0.5em;
+    height: 0.5em;
+}

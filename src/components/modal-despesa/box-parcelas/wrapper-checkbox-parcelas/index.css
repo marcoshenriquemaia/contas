@@ -1,0 +1,18 @@
+.wrap-checkbox-parcelas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 6em;
+    height: 3em;
+}
+
+.checkbox-parcelas {
+    width: 1em;
+    height: 1em;
+    border: 3px solid black;
+    border-radius: 100em;
+}
+
+.text-checkbox-parcelas {
+    text-align: center;
+}

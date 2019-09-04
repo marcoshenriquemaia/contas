@@ -1,5 +1,8 @@
 import CriarIcone from "../../shared/criar-icone/index.js";
 import CriarElemento from "../../shared/criar-elemento/index.js";
+import ImportCss from "../../../utils/import-css/index.js";
+
+ImportCss({ path: 'box-tags/tag' })
 
 const Tag = {
     build: ({ text }) => {
@@ -14,7 +17,7 @@ const Tag = {
 
         return tag;
     },
-    remove: ({tag}) => {
+    remove: ({ tag }) => {
         tag && tag.remove();
     }
 }

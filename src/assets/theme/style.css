@@ -193,31 +193,6 @@ body {
     margin-bottom: 0.3em;
 }
 
-.container-discador {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-.campo-valores-discador {
-    top: 0;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 17%;
-    background-color: var(--secundary);
-    font-size: 2em;
-    color: red;
-    margin-top: 4rem;
-}
-
 .discador {
     display: flex;
     align-items: center;
@@ -232,91 +207,6 @@ body {
     margin: 1.9em;
     width: 2em;
     height: 2em;
-}
-
-.numero-discador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    border-radius: 100rem;
-    margin: 1.3rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    border: 3px solid var(--primary);
-    color: var(--primary);
-    background-color: #fff;
-    outline: none;
-}
-
-.numero-discador0 {
-    margin-left: 2.4em;
-    background-color: #fff;
-}
-
-.botao-discador {
-    width: 45%;
-    height: 6%;
-    background-color: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 2rem;
-    font-size: 1.6em;
-    margin-top: 5%;
-}
-
-.secoes-cabecalho {
-    display: flex;
-    width: 100%;
-    height: 8%;
-    position: fixed;
-    top: 0;
-    background-color: var(--primary);
-}
-
-.receita-despesa-transferencia {
-    height: 100%;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
-    color: #fff;
-}
-
-.receita {
-    width: 30%;
-}
-
-.despesa {
-    width: 30%;
-}
-
-.transferencia {
-    width: 40%;
-}
-
-.receita-despesa-transferencia {
-    align-items: center;
-    height: 100%;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
-    color: #fff;
-}
-
-.receita {
-    width: 30%;
-}
-
-.despesa {
-    width: 30%;
-}
-
-.transferencia {
-    width: 40%;
 }
 
 .box-total {
@@ -409,105 +299,6 @@ body {
     width: 20%;
     height: 30%;
     margin-right: 20%;
-}
-
-.parcelas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    height: 10%;
-}
-
-.text-parcelas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6em;
-    font-weight: 500;
-    color: var(--primary);
-    width: 30%;
-    height: 30%;
-    margin-right: 10%;
-}
-
-.campo-parcelas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secundary);
-    width: 30%;
-    height: 50%;
-    border: 1px solid var(--primary);
-    border-radius: 3em;
-    font-size: 1.4em;
-    text-align: center;
-    margin-right: 3%;
-    outline: none;
-}
-
-.wrap-checkbox-parcelas {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 6em;
-    height: 3em;
-}
-
-.checkbox-parcelas {
-    width: 1em;
-    height: 1em;
-    border: 3px solid black;
-    border-radius: 100em;
-}
-
-.text-checkbox-parcelas {
-    text-align: center;
-}
-
-.campo-tags {
-    display: flex;
-    align-items: center;
-    width: 95%;
-    height: 5%;
-    border: 1px solid var(--primary);
-    border-radius: 0.4em;
-    margin-top: 1%;
-    margin-bottom: 5%;
-}
-
-.text-tag {
-    display: flex;
-    align-items: center;
-    background-color: var(--primary);
-    border-radius: 0.3em;
-    height: 1.2em;
-    color: #fff;
-    padding: 0.2em;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    text-align: center;
-}
-
-.img-delete-tag {
-    margin-left: 0.2em;
-    width: 0.5em;
-    height: 0.5em;
-}
-
-.text-adicionar-tag {
-    display: flex;
-    align-items: center;
-    border-radius: 0.3em;
-    height: 1.2em;
-    color: var(--primary);
-    padding: 0.1em;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    text-align: center;
-    position: absolute;
-    right: 0.5em;
-    border: 1px solid var(--primary);
 }
 
 .obs {
@@ -790,16 +581,6 @@ body {
     border-radius: 3rem;
     text-align: center;
     font-size: 1.5em;
-    outline: none;
-}
-
-.input-tag {
-    background-color: transparent;
-    flex: 1;
-    width: 100%;
-    font-size: 1.2em;
-    height: 95%;
-    border: none;
     outline: none;
 }
 

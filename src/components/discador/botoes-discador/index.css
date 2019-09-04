@@ -1,0 +1,19 @@
+.numero-discador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    border-radius: 100rem;
+    margin: 1.3rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 3px solid var(--primary);
+    color: var(--primary);
+    background-color: #fff;
+    outline: none;
+}
+
+.numero-discador0 {
+    margin-left: 2.4em;
+    background-color: #fff;
+}

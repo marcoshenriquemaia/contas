@@ -1,11 +1,14 @@
 import CriarElemento from "../../../shared/criar-elemento/index.js";
 import CriarIcone from "../../../shared/criar-icone/index.js";
 import MudaIcone from "../../../muda-icone/index.js";
+import ImportCss from "../../../../utils/import-css/index.js";
+
+ImportCss({ path: 'modal-despesa/box-parcelas/wrapper-checkbox-parcelas' });
 
 let checkbox = false;
 
 const WrapCheckboxParcelas = {
-    build: ({campoParcelas}) => {
+    build: ({ campoParcelas }) => {
         const wrapCheckboxParcelas = CriarElemento({ tipoElemento: 'div', classes: ['wrap-checkbox-parcelas'] });
         const checkboxParcelas = CriarIcone('checkbox.png', 'icone', 'checkbox-parcelas');
         const textCheckboxParcelas = CriarElemento({ tipoElemento: 'span', conteudo: 'Dividir-valor', classes: ['text-checkbox-parcelas'] })
@@ -25,8 +28,9 @@ const WrapCheckboxParcelas = {
 
 const clickWrapCheckbox = ({ campoParcelas }) => {
     checkbox
-        ? MudaIcone('checkbox.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas')
-        : MudaIcone('checkbox-marcado.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas');
+        ?
+        MudaIcone('checkbox.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas') :
+        MudaIcone('checkbox-marcado.png', 'wrap-checkbox-parcelas', 'checkbox', 'checkbox-parcelas');
     checkbox = !checkbox;
     campoParcelas.classList.toggle('campo-parcelas-on');
 };
