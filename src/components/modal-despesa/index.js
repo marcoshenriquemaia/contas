@@ -8,6 +8,9 @@ import Despesas from "../../pages/despesas/index.js";
 import CriarElemento from "../shared/criar-elemento/index.js";
 import Cabecalho from "../cabecalho/index.js";
 import BoxTotalDespesa from "./box-valor-despesa/index.js";
+import ImportCss from "../../utils/import-css/index.js";
+
+ImportCss({path: 'modal-despesa'})
 
 const ModalDespesa = {
   build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {

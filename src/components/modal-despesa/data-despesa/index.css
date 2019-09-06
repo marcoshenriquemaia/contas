@@ -1,0 +1,30 @@
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 10%;
+}
+
+.text-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    font-weight: 500;
+    color: var(--primary);
+    width: 20%;
+    height: 30%;
+    margin-right: 20%;
+}
+
+.campo-data {
+    width: 60%;
+    height: 50%;
+    border: 1px solid var(--primary);
+    background-color: #fff;
+    border-radius: 3em;
+    font-size: 1.4em;
+    text-align: center;
+    outline: none;
+}

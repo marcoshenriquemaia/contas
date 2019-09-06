@@ -1,0 +1,39 @@
+.rodape {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -1px 25px -1px var(--shadow);
+    width: 100%;
+    height: 8%;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 5;
+}
+.button-add {
+    position: absolute;
+    transform: translateY(-35%);
+    width: 5em;
+    height: 5em;
+    border-radius: 100em;
+    border: none;
+    background-color: var(--primary);
+    outline: 0;
+}
+.wrap-div-left {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 37%;
+    display: flex;
+    margin-right: 3em;
+}
+.wrap-div-right {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 37%;
+    display: flex;
+    margin-left: 3em;
+}
+.imagem-add {
+    width: 50%;
+    height: 50%;
+}

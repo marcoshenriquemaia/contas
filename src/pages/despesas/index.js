@@ -1,6 +1,9 @@
 import CriarIcone from "../../components/shared/criar-icone/index.js";
 import {dashBoard} from '../../../app.js';
 import CriarElemento from "../../components/shared/criar-elemento/index.js";
+import ImportCss from "../../utils/import-css/index.js";
+
+ImportCss({page: 'despesas'});
 
 const Despesas = () => {
   const container = document.querySelector('.container');

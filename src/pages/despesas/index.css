@@ -1,0 +1,93 @@
+.container-lista {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+.valores {
+    display: flex;
+    font-size: 2em;
+    color: #fff;
+}
+.campo-valores {
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    box-shadow: 0px 3px 0px 0px var(--shadow);
+    background-color: var(--primary);
+}
+
+.container-data-conta {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 15px 0px var(--shadow);
+    border-top: 1px solid var(--shadow);
+}
+
+.text-data-lista {
+    margin-top: .4em;
+}
+.box-icone-carteira {
+    width: 3.5em;
+    height: 3.5em;
+    background-color: var(--primary);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100em;
+    margin-left: 1em;
+    margin-right: .3em;
+}
+
+.icones {
+    display: flex;
+    width: 2.1rem;
+    height: 2.1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.7rem;
+    color: var(--primary);
+}
+
+.icones:hover {
+    color: #00aadd;
+}
+
+.wrap-text-conta {
+    display: flex;
+    flex-direction: column;
+}
+.all-text-conta {
+    margin: .3em;
+}
+.text-bold {
+    font-weight: 700;
+}
+.box-text-conta {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+.icone-conta {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    border-radius: 100em;
+}

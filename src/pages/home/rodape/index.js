@@ -1,6 +1,9 @@
 import CriarIcone from "../../../components/shared/criar-icone/index.js";
 import Discador from "../../../components/discador/index.js";
 import CriarElemento from "../../../components/shared/criar-elemento/index.js";
+import ImportCss from "../../../utils/import-css/index.js";
+
+ImportCss({page: 'home/rodape'})
 
 const Rodape = ({valorDiscador, carteira, dashBoard}) =>{
     const container = document.querySelector('.container');

@@ -2,6 +2,9 @@ import BoxCategorias from '../../box-categorias/index.js';
 import { DictionaryIcones } from '../../../domain/dictionary-icons/index.js';
 import MudaI from '../../muda-i/index.js';
 import CriarElemento from '../../shared/criar-elemento/index.js';
+import ImportCss from '../../../utils/import-css/index.js';
+
+ImportCss({path: 'modal-despesa/categorias-conta'});
 
 const CriarCadastroCategorias = () => {
   const containerDespesa = document.querySelector(".container-despesa");

@@ -1,0 +1,106 @@
+.box-metas {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 20%;
+    background-color: #fff;
+    transform: translateY(35%);
+    border-radius: 0.4em;
+    border: 1px solid var(--shadow);
+    overflow-y: scroll;
+}
+.cadastro-conta {
+    width: 90%;
+    height: 40%;
+    border: 1px solid var(--shadow);
+    border-radius: 0.4em;
+    background-color: #fff;
+    transform: translateY(10%);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.campo-valores {
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    box-shadow: 0px 3px 0px 0px var(--shadow);
+    background-color: var(--primary);
+}
+
+.valores {
+    display: flex;
+    font-size: 2em;
+    color: #fff;
+}
+
+.box-metas {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 20%;
+    background-color: #fff;
+    transform: translateY(35%);
+    border-radius: 0.4em;
+    border: 1px solid var(--shadow);
+    overflow-y: scroll;
+}
+
+.text-metas {
+    margin-top: 0.5rem;
+    font-size: 1.5em;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.icone-meta {
+    width: 3em;
+    height: 3em;
+    background-color: var(--primary);
+    border-radius: 100em;
+}
+
+.wrap-meta {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: 30%;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.wrap-titulo-barra {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.barra-progresso {
+    margin-top: 0.3em;
+    width: 100%;
+    height: 20%;
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+}
+
+.valor-meta {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--primary);
+}

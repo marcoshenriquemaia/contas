@@ -1,5 +1,8 @@
 import CriarBoxIcone from "../../components/shared/criar-box-icone/index.js";
 import CriarElemento from "../../components/shared/criar-elemento/index.js";
+import ImportCss from "../../utils/import-css/index.js";
+
+ImportCss({page: 'home'});
 
 const CriaHome = () => {
   const container = document.querySelector(".container");
