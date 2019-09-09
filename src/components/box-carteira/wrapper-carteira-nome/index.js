@@ -13,7 +13,7 @@ const WrapCarteiraNome = {
         wrapCarteiraNome.appendChild(textNome);
 
         boxCarteira.addEventListener('click', () => boxCarteiraClick(boxCarteira));
-
+        
         return wrapCarteiraNome;
     },
     remove: () => {

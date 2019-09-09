@@ -11,7 +11,7 @@ const AddCategiria = {
         const boxCategoriaAdd = CriarElemento({ tipoElemento: 'div', classes: ['box-carteira'] });
         const iconeCategoria = Icone.build({ cor: 'red', icone: 'aviso' });
         const wrapText = WrapCategoriaNomeAdd.build({ categoria: 'Categoria', nome: 'Nome' });
-        const botaoAdd = CriarElemento({ tipoElemento: 'button', classes: ["add-carteira"], conteudo: '+' });
+        const botaoAdd = CriarElemento({ tipoElemento: 'button', classes: ["add-carteira"], conteudo: '+'});
 
         boxCategoriaAdd.appendChild(iconeCategoria);
         boxCategoriaAdd.appendChild(wrapText);

@@ -23,7 +23,7 @@ body {
     height: 100vh;
 }
 
-.container-inicial {
+/* .container-inicial {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -41,21 +41,7 @@ body {
     margin-bottom: 0.3em;
 }
 
-.discador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 95%;
-    height: 50%;
-    margin-top: 12.5rem;
-}
 
-.backspace {
-    margin: 1.9em;
-    width: 2em;
-    height: 2em;
-}
 
 .cifrao {
     margin-right: 1em;
@@ -74,69 +60,6 @@ body {
     margin-left: 2.8rem;
     font-size: 1.2em;
     color: var(--primary);
-}
-
-
-
-.botao-confirmar {
-    border: none;
-    background-color: var(--primary);
-    width: 50%;
-    height: 7%;
-    border-radius: 1.7em;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
-    font-size: 1.5em;
-    color: #fff;
-    margin-top: 8%;
-}
-
-.container-inicial {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #f2f2f2;
-    z-index: 4;
-}
-
-
-
-
-.conta {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 25%;
-    margin-top: .5em;
-    margin-bottom: .5em
-}
-
-.botao-salvar-cadastro-carteira {
-    margin-top: 1.5rem;
-    width: 35%;
-    height: 2.3rem;
-    border: none;
-    box-shadow: 2px 2px 2px var(--shadow);
-    background-color: var(--primary);
-    color: #fff;
-    border-radius: 1em;
-    font-size: 1.3em;
-}
-
-.botao-salvar-cadastro-carteira {
-    margin-top: 1.5rem;
-    width: 35%;
-    height: 2.3rem;
-    border: none;
-    box-shadow: 2px 2px 2px var(--shadow);
-    background-color: var(--primary);
-    color: #fff;
-    border-radius: 1em;
-    font-size: 1.3em;
 }
 
 
@@ -180,17 +103,6 @@ body {
     font-size: 1.3em;
 }
 
-.wrap-box-carteira {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 25%;
-    overflow-y: scroll;
-    position: relative;
-}
-
 .box-icone {
     position: relative;
     display: flex;
@@ -220,9 +132,7 @@ body {
     outline: none;
 }
 
-.campo-parcelas-on {
-    background-color: #fff;
-}
+
 
 .icone-categoria {
     display: flex;
@@ -232,4 +142,4 @@ body {
     padding: 10px;
     border-radius: 100em;
     background-color: #fff;
-}
+} */

@@ -17,3 +17,19 @@
     margin-left: 2.4em;
     background-color: #fff;
 }
+
+.discador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 50%;
+    margin-top: 12.5rem;
+}
+
+.backspace {
+    margin: 1.9em;
+    width: 2em;
+    height: 2em;
+}

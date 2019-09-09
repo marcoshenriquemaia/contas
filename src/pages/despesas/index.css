@@ -91,3 +91,12 @@
     background-color: var(--primary);
     border-radius: 100em;
 }
+
+.conta {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 25%;
+    margin-top: .5em;
+    margin-bottom: .5em
+}
