@@ -41,8 +41,6 @@ body {
     margin-bottom: 0.3em;
 }
 
-
-
 .cifrao {
     margin-right: 1em;
     font-weight: 800;
@@ -61,7 +59,6 @@ body {
     font-size: 1.2em;
     color: var(--primary);
 }
-
 
 .fechar-cadastro-carteira {
     width: 1em;
@@ -131,8 +128,6 @@ body {
     font-size: 1.5em;
     outline: none;
 }
-
-
 
 .icone-categoria {
     display: flex;

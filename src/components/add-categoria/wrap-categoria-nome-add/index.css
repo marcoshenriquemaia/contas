@@ -1,11 +1,12 @@
-.wrap-carteira-nome {
+.carteira-nome-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 55%;
     height: 100%;
+    margin-left: .3em;
   }
-  .text-carteira {
+  .carteira-text {
     font-weight: 800;
     margin-bottom: 0.2em;
   }

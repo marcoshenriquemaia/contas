@@ -12,6 +12,15 @@ import ImportCss from "../../utils/import-css/index.js";
 
 ImportCss({path: 'modal-despesa'})
 
+let valorDespesa;
+let nomeCarteira;
+let nomePessoaCarteira;
+let categoriaPrincipal;
+let subCategoria;
+let tags = [];
+let obs;
+let data;
+
 const ModalDespesa = {
   build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
     const containerDespesa = CriarElemento({ tipoElemento: 'section', classes: ['container-despesa'] });
@@ -40,6 +49,7 @@ const ModalDespesa = {
 
     botaoAdd.addEventListener("click", CriarCadastroCategorias)
     botaoConfirmar.addEventListener("click", () => Despesas(dashBoard))
+    // BoxCarteira.addEventListener('click', () => criaDashBoard({carteira: {nome: }}))
 
     return containerDespesa;
   }, 
@@ -48,5 +58,44 @@ const ModalDespesa = {
     containerDespesa && containerDespesa.remove();
   }
 };
+
+const atribuiValores = () =>{
+  const $valorTotal = document.querySelector('.valor-total');
+  const $nomeCarteira = document.querySelector('.text-carteira');
+  const $nomePessoaCarteira = document.querySelector('.text-nome');
+  const $categoria = document.queryCommandValue('.text-carteira-add');
+  const $subCategoria = document.querySelector('.nome-add-text');
+  const $campoData = document.querySelector('.campo-data');
+
+  valorDespesa = $valorTotal.textContent;
+  
+}
+
+const criaDashBoard = ({valorDespesa, carteira, categoria, tags, data, obs}) =>{
+  const { dia, mes, ano } = data;
+  const { nomeCarteira, nomePessoaCarteira } = carteira;
+  const { categoriaPrincipal, subCategoria } = categoria;
+
+  const dashBoard = {
+    valor: valorDespesa,
+    tipo: "Despesa",
+    carteira: {
+      nome: nomeCarteira,
+      nomePessoa: nomePessoaCarteira
+    },
+    categoria: {
+      principal: categoriaPrincipal,
+      sub: "Cinema"
+    },
+    tags: [...tags],
+    data: {
+      dia,
+      mes,
+      ano
+    },
+    obs,
+  }
+
+}
 
 export default ModalDespesa;

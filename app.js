@@ -9,7 +9,7 @@ const carteira = {
   nome: "Marcos",
   tipo: "Nubank",
   valor: 100,
-  cor: "red"
+  cor: "#fff"
 };
 
 const dashBoardItem = {

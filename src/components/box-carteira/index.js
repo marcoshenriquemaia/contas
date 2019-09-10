@@ -22,12 +22,18 @@ const BoxCarteira = {
         boxCarteira.appendChild(valorCarteira);
         cadastroConta.appendChild(boxCarteira);
 
+        boxCarteira.addEventListener('click', () => clickBoxCarteira({boxCarteira}))
         return boxCarteira;
     },
     remove: () => {
         const cadastroConta = document.querySelector('.cadastro-conta');
         cadastroConta && cadastroConta.remove();
     }
+}
+
+const clickBoxCarteira = ({boxCarteira}) =>{
+    boxCarteira.classList.toggle('box-carteira-on');
+
 }
 
 export default BoxCarteira;

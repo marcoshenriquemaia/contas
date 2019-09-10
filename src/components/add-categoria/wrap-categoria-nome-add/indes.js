@@ -5,18 +5,18 @@ ImportCss({path: 'add-categoria/wrap-categoria-nome-add'});
 
 const WrapCategoriaNomeAdd = {
     build: ({ categoria, nome }) => {
-        const wrapCategoriaNomeAdd = CriarElemento({ tipoElemento: 'div', classes: ['wrap-carteira-nome'] })
-        const textCategoriaAdd = CriarElemento({ tipoElemento: 'span', conteudo: categoria, classes: ["text-carteira-add", 'text-carteira'] })
-        const textNomeAdd = CriarElemento({ tipoElemento: 'span', conteudo: nome, classes: ["text-nome-add"] })
+        const carteiraWrapper = CriarElemento({ tipoElemento: 'div', classes: ['carteira-nome-wrapper'] })
+        const categoriaText = CriarElemento({ tipoElemento: 'h1', conteudo: categoria, classes: ["text-carteira-add", 'carteira-text'] })
+        const nomeText = CriarElemento({ tipoElemento: 'h2', conteudo: nome, classes: ["nome-add-text"] })
 
-        wrapCategoriaNomeAdd.appendChild(textCategoriaAdd);
-        wrapCategoriaNomeAdd.appendChild(textNomeAdd);
-
-        return wrapCategoriaNomeAdd;
+        carteiraWrapper.appendChild(categoriaText);
+        carteiraWrapper.appendChild(nomeText);
+        
+        return carteiraWrapper;
 
     },
     remove: () =>{
-        const wrapCategoriaNomeAdd = document.querySelector('.wrap-carteira-nome');
+        const wrapCategoriaNomeAdd = document.querySelector('.carteira-nome-wrapper');
         wrapCategoriaNomeAdd && wrapCategoriaNomeAdd.remove();
     }
     

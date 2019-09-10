@@ -39,3 +39,7 @@
     flex-direction: column;
     overflow-y: scroll;
 }
+
+.box-carteira-on{
+    border: 1px solid var(--primary);
+}
