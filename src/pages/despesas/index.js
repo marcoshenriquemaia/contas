@@ -1,5 +1,5 @@
 import CriarIcone from "../../components/shared/criar-icone/index.js";
-import {dashBoard} from '../../../app.js';
+// import {dashBoard} from '../../../app.js'; 
 import CriarElemento from "../../components/shared/criar-elemento/index.js";
 import ImportCss from "../../utils/import-css/index.js";
 
@@ -34,8 +34,8 @@ const Despesas = () => {
   
     const iconeDespesa = () => {
       const boxIcone = CriarElemento({tipoElemento: 'div', classes: ['box-icone-carteira']})
-      const icone = CriarIcone(`${principal}.png`, "Icone", "icones");
-  
+      const icone = CriarElemento({tipoElemento: 'i', icone: principal.toLowerCase(), classes: ['despesa-icone']});
+
       boxIcone.appendChild(icone);
   
       return boxIcone;
@@ -43,7 +43,7 @@ const Despesas = () => {
   
     const wrapTipoConta = () => {
       const wrapTipoDespesa = CriarElemento({tipoElemento: 'div', classes: ["wrap-tipo-conta", "wrap-text-conta"]})
-      const textTipo = CriarElemento({tipoElemento: 'span', conteudo: principal, classes: ["all-text-conta", "text-bold"]})
+      const textTipo = CriarElemento({tipoElemento: 'span', conteudo: principal, classes: ["text-bold"]})
       const textConta = CriarElemento({tipoElemento: 'span', conteudo: sub, classes: ["all-texte-conta"]})
   
       wrapTipoDespesa.appendChild(textTipo);

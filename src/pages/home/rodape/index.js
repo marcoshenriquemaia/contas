@@ -27,6 +27,12 @@ const Rodape = ({valorDiscador, carteira, dashBoard}) =>{
     wrapBoxDireita.appendChild(icone4);
 
     botaoAdd.addEventListener("click", e => {
+        const containerDespesa = document.querySelector('.container-despesa');
+        const containerLista = document.querySelector('.container-lista');
+        
+        containerDespesa && container.removeChild(containerDespesa);
+        containerLista && container.removeChild(containerLista);
+
         const discador = Discador.build({valorDiscador, carteira, botaoAdd, dashBoard});
         container.appendChild(discador);
     });

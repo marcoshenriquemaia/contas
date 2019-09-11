@@ -8,7 +8,7 @@ ImportCss({path: 'add-categoria'});
 
 const AddCategiria = {
     build: () => {
-        const boxCategoriaAdd = CriarElemento({ tipoElemento: 'div', classes: ['box-carteira'] });
+        const boxCategoriaAdd = CriarElemento({ tipoElemento: 'div', classes: ['categoria-box'] });
         const iconeCategoria = Icone.build({ cor: '#fff', icone: 'aviso' });
         const wrapText = WrapCategoriaNomeAdd.build({ categoria: 'Categoria', nome: 'Nome' });
         const botaoAdd = CriarElemento({tipoElemento: 'i', icone: 'add', classes: ['carteira-icone']})
@@ -25,7 +25,7 @@ const AddCategiria = {
         return boxCategoriaAdd;
     },
     remove: () =>{
-        const boxCategoriaAdd = document.querySelector('.box-carteira');
+        const boxCategoriaAdd = document.querySelector('.categoria-box');
         const botaoAdd = document.querySelector('.carteira-add');
         botaoAdd.removeEventListener(CriarCadastroCategorias);
         boxCategoriaAdd && boxCategoriaAdd.remove();

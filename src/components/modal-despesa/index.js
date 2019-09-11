@@ -12,14 +12,17 @@ import ImportCss from "../../utils/import-css/index.js";
 
 ImportCss({path: 'modal-despesa'})
 
-let valorDespesa;
-let nomeCarteira;
+let valorDespesa = null;
+let nomeCarteira; 
 let nomePessoaCarteira;
 let categoriaPrincipal;
 let subCategoria;
 let tags = [];
 let obs;
-let data;
+let dia; 
+let mes; 
+let ano;
+let quantidadeParcelas;
 
 const ModalDespesa = {
   build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
@@ -48,8 +51,14 @@ const ModalDespesa = {
     wrapBoxCarteira.appendChild(boxCarteiraAdd);
 
     botaoAdd.addEventListener("click", CriarCadastroCategorias)
-    botaoConfirmar.addEventListener("click", () => Despesas(dashBoard))
-    // BoxCarteira.addEventListener('click', () => criaDashBoard({carteira: {nome: }}))
+    botaoConfirmar.addEventListener("click", () => {
+      const $categoria = document.querySelector('.text-carteira-add');
+
+      if ($categoria.textContent === 'Categoria') {avisoPreecherCategoria({boxCarteiraAdd}); return;}
+      atribuiValores();
+      criaDashBoard({valor: valorDespesa, carteira: {nomeCarteira, nomePessoaCarteira}, categoria: {categoriaPrincipal, subCategoria}, tags, data: {dia, mes, ano}, obs, quantidadeParcelas});
+      Despesas()
+    })
 
     return containerDespesa;
   }, 
@@ -59,25 +68,44 @@ const ModalDespesa = {
   }
 };
 
+const avisoPreecherCategoria =({boxCarteiraAdd}) =>{
+  boxCarteiraAdd.classList.add('aviso-categoria');
+  setTimeout(()=>{boxCarteiraAdd.classList.remove('aviso-categoria')}, 500)
+}
+
 const atribuiValores = () =>{
   const $valorTotal = document.querySelector('.valor-total');
   const $nomeCarteira = document.querySelector('.text-carteira');
   const $nomePessoaCarteira = document.querySelector('.text-nome');
-  const $categoria = document.queryCommandValue('.text-carteira-add');
+  const $categoria = document.querySelector('.text-carteira-add');
   const $subCategoria = document.querySelector('.nome-add-text');
   const $campoData = document.querySelector('.campo-data');
-
-  valorDespesa = $valorTotal.textContent;
+  const $tags = [...document.querySelectorAll('.text-tag')]
+  const $obs = document.querySelector('.obs');
+  const $campoParcelas = document.querySelector('.campo-parcelas');
   
+  valorDespesa = parseInt($valorTotal.textContent.replace(/[^0-9]/g,''));
+  nomeCarteira = $nomeCarteira.textContent;
+  nomePessoaCarteira = $nomePessoaCarteira.textContent;
+  categoriaPrincipal = $categoria.textContent;
+  quantidadeParcelas = $campoParcelas.value;
+  obs = $obs.value;
+  dia = parseInt($campoData.value.substring(8,10));
+  mes = parseInt($campoData.value.substring(5,7));
+  ano = parseInt($campoData.value.substring(0,4));
+  $tags.map(tag =>{
+    tags.push(tag.textContent);
+  })
+  console.log(valorDespesa);
 }
 
-const criaDashBoard = ({valorDespesa, carteira, categoria, tags, data, obs}) =>{
+const criaDashBoard = ({valor, carteira, categoria, tags, data, obs, quantidadeParcelas}) =>{
   const { dia, mes, ano } = data;
   const { nomeCarteira, nomePessoaCarteira } = carteira;
   const { categoriaPrincipal, subCategoria } = categoria;
 
-  const dashBoard = {
-    valor: valorDespesa,
+  const dashBoardItem = {
+    valor: valor,
     tipo: "Despesa",
     carteira: {
       nome: nomeCarteira,
@@ -87,15 +115,17 @@ const criaDashBoard = ({valorDespesa, carteira, categoria, tags, data, obs}) =>{
       principal: categoriaPrincipal,
       sub: "Cinema"
     },
-    tags: [...tags],
+    tags,
     data: {
       dia,
       mes,
       ano
     },
     obs,
+    quantidadeParcelas
   }
-
+  dashBoard.push(dashBoardItem);
+  console.log(dashBoard);
 }
 
 export default ModalDespesa;

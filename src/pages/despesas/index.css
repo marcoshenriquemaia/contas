@@ -71,9 +71,6 @@
     display: flex;
     flex-direction: column;
 }
-.all-text-conta {
-    margin: .3em;
-}
 .text-bold {
     font-weight: 700;
 }
@@ -81,6 +78,7 @@
     width: 75%;
     display: flex;
     justify-content: space-between;
+    transform: translateY(6px);
 }
 .icone-conta {
     width: 3em;
@@ -96,7 +94,14 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    height: 25%;
-    margin-top: .5em;
-    margin-bottom: .5em
+    height: 4em;
+}
+
+.despesa-icone{
+    width: 2.1rem;
+    height: 2.1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
 }

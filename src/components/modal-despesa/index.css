@@ -42,3 +42,6 @@
     overflow-y: scroll;
     position: relative;
 }
+.aviso-categoria{
+    border: 1px solid red;
+}
