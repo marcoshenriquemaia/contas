@@ -11,10 +11,7 @@ const AddCategiria = {
         const boxCategoriaAdd = CriarElemento({ tipoElemento: 'div', classes: ['categoria-box'] });
         const iconeCategoria = Icone.build({ cor: '#fff', icone: 'aviso' });
         const wrapText = WrapCategoriaNomeAdd.build({ categoria: 'Categoria', nome: 'Nome' });
-        const botaoAdd = CriarElemento({tipoElemento: 'i', icone: 'add', classes: ['carteira-icone']})
-        // CriarElemento({ tipoElemento: 'button', classes: ["carteira-add"], conteudo: '+'});
-
-        // <i class="fas fa-plus"></i>
+        const botaoAdd = CriarElemento({tipoElemento: 'i', icone: 'add', classes: ['categoria-icone']})
 
         boxCategoriaAdd.appendChild(iconeCategoria);
         boxCategoriaAdd.appendChild(wrapText);
@@ -26,7 +23,7 @@ const AddCategiria = {
     },
     remove: () =>{
         const boxCategoriaAdd = document.querySelector('.categoria-box');
-        const botaoAdd = document.querySelector('.carteira-add');
+        const botaoAdd = document.querySelector('.categoria-add');
         botaoAdd.removeEventListener(CriarCadastroCategorias);
         boxCategoriaAdd && boxCategoriaAdd.remove();
     }

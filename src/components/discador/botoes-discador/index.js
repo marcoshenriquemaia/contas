@@ -23,6 +23,8 @@ const BotoesDiscador = {
         discador.appendChild(botaoDiscador);
         discador.appendChild(backspace);
 
+        backspace.addEventListener('click', clickBackspace);
+
         return discador;
     },
     remove: () => {
@@ -30,5 +32,13 @@ const BotoesDiscador = {
         discador && discador.remove();
     }
 };
+
+const clickBackspace = () =>{
+    const campoDiscador = document.querySelector('.campo-valores-discador');
+    const numerosDiscador = [...campoDiscador.textContent];
+    if (campoDiscador.textContent == 'R$') return;
+    numerosDiscador.pop();
+    campoDiscador.textContent = numerosDiscador.join('');
+}
 
 export default BotoesDiscador;
