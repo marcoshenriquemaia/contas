@@ -9,7 +9,6 @@ const BoxCarteira = {
     build: ({ carteira }) => {
         const { nome, tipo, valor, cor } = carteira;
 
-        const cadastroConta = document.querySelector(".cadastro-conta");
         const boxCarteira = CriarElemento({ tipoElemento: 'div', classes: ['box-carteira'] })
         const wrapCarteiraNome = WrapCarteiraNome.build({ nome, tipo, boxCarteira });
         const valorCarteira = CriarValorCarteira.build({ valor });
@@ -20,7 +19,6 @@ const BoxCarteira = {
         boxIcone.appendChild(icone);
         boxCarteira.appendChild(wrapCarteiraNome);
         boxCarteira.appendChild(valorCarteira);
-        cadastroConta.appendChild(boxCarteira);
 
         boxCarteira.addEventListener('click', () => clickBoxCarteira({boxCarteira}))
         return boxCarteira;

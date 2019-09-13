@@ -12,17 +12,6 @@ import ImportCss from "../../utils/import-css/index.js";
 
 ImportCss({path: 'modal-despesa'})
 
-let valorDespesa = null;
-let nomeCarteira; 
-let nomePessoaCarteira;
-let categoriaPrincipal;
-let subCategoria;
-let tags = [];
-let obs;
-let dia; 
-let mes; 
-let ano;
-let quantidadeParcelas;
 
 const ModalDespesa = {
   build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
@@ -55,8 +44,8 @@ const ModalDespesa = {
       const $categoria = document.querySelector('.text-carteira-add');
 
       if ($categoria.textContent === 'Categoria') {avisoPreecherCategoria({boxCarteiraAdd}); return;}
-      atribuiValores();
-      criaDashBoard({valor: valorDespesa, carteira: {nomeCarteira, nomePessoaCarteira}, categoria: {categoriaPrincipal, subCategoria}, tags, data: {dia, mes, ano}, obs, quantidadeParcelas});
+      const valores = atribuiValores();
+      criaDashBoard(valores);
       Despesas()
     })
 
@@ -84,19 +73,21 @@ const atribuiValores = () =>{
   const $obs = document.querySelector('.obs');
   const $campoParcelas = document.querySelector('.campo-parcelas');
   
-  valorDespesa = parseInt($valorTotal.textContent.replace(/[^0-9]/g,''));
-  nomeCarteira = $nomeCarteira.textContent;
-  nomePessoaCarteira = $nomePessoaCarteira.textContent;
-  categoriaPrincipal = $categoria.textContent;
-  quantidadeParcelas = $campoParcelas.value;
-  obs = $obs.value;
-  dia = parseInt($campoData.value.substring(8,10));
-  mes = parseInt($campoData.value.substring(5,7));
-  ano = parseInt($campoData.value.substring(0,4));
-  $tags.map(tag =>{
-    tags.push(tag.textContent);
+  const valorDespesa = parseInt($valorTotal.textContent.replace(/[^0-9]/g,''));
+  const nomeCarteira = $nomeCarteira.textContent;
+  const nomePessoaCarteira = $nomePessoaCarteira.textContent;
+  const categoriaPrincipal = $categoria.textContent;
+  const quantidadeParcelas = $campoParcelas.value;
+  const obs = $obs.value;
+  const dia = parseInt($campoData.value.substring(8,10));
+  const mes = parseInt($campoData.value.substring(5,7));
+  const ano = parseInt($campoData.value.substring(0,4));
+  const subCategoria = $subCategoria.textContent;
+  const arrayTags = $tags.map(tag =>{
+    return tag.textContent;
   })
-  console.log(valorDespesa);
+
+  return {valor: valorDespesa, carteira: {nomeCarteira, nomePessoaCarteira}, categoria: {categoriaPrincipal, subCategoria}, quantidadeParcelas, obs, data: {dia, mes, ano}, tags: arrayTags}
 }
 
 const criaDashBoard = ({valor, carteira, categoria, tags, data, obs, quantidadeParcelas}) =>{

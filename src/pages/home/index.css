@@ -10,17 +10,7 @@
     border: 1px solid var(--shadow);
     overflow-y: scroll;
 }
-.cadastro-conta {
-    width: 90%;
-    height: 40%;
-    border: 1px solid var(--shadow);
-    border-radius: 0.4em;
-    background-color: #fff;
-    transform: translateY(10%);
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-}
+
 .campo-valores {
     top: 0;
     position: fixed;

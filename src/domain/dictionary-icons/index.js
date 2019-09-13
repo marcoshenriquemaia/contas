@@ -8,5 +8,6 @@ export const DictionaryIcones = {
     estatisticas: 'fa-chart-line',
     contaCompartilhada: 'fa-user-friends',
     config: 'fa-cog',
-    add: 'fa-plus'
+    add: 'fa-plus',
+    carteira: 'fa-wallet'
 }

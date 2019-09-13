@@ -1,12 +1,13 @@
 import CriarBoxIcone from "../../components/shared/criar-box-icone/index.js";
 import CriarElemento from "../../components/shared/criar-elemento/index.js";
 import ImportCss from "../../utils/import-css/index.js";
+import CarteirasBox from "./carteiras-box/index.js";
 
 ImportCss({page: 'home'});
 
 const CriaHome = () => {
   const container = document.querySelector(".container");
-  const cadastroConta = CriarElemento({tipoElemento: 'div', classes: ["cadastro-conta"]})
+  const cadastroConta = CarteirasBox();
 
   const campoValores = () => {
     const boxValores = CriarElemento({tipoElemento: 'div', classes: ['campo-valores']})

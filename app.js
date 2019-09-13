@@ -55,23 +55,7 @@ const dashBoardItem = {
   createdAt: new Date()
 };
 
-export const dashBoard = [
-  dashBoardItem,
-  { ...dashBoardItem, status: true },
-  { ...dashBoardItem, valor: 111 }
-];
-
 
 
 container.onload = CriaHome();
 container.onload = Rodape({valorDiscador, carteira, dashBoard});
-
-// const meuArray= []
-
-// let valor;
-// let nome;
-// let conta;
-
-// const asas = {valor: inputquetemascoisas.textcontent ,conta: {conta,nome}}
-
-// meuArray.push(asas)
