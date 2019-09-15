@@ -9,8 +9,10 @@ const Despesas = () => {
   const containerDespesa = document.querySelector(".container-despesa");
   container.removeChild(containerDespesa);
 
+  const valorDespesa = somarContas();
+
   const containerLista = CriarElemento({tipoElemento: 'section', classes: ['container-lista']})
-  const campoValores = CriarElemento({tipoElemento: 'span', conteudo: 'R$ 100.000,00', classes: ["campo-valores", "valores"]})
+  const campoValores = CriarElemento({tipoElemento: 'span', conteudo: `R$ ${valorDespesa}`, classes: ["campo-valores", "valores"]})
   const iconeValor = CriarIcone("bill.png", "Icone valores", "icones");
   const containerDataConta = CriarElemento({tipoElemento: 'div', classes: ['container-data-conta']})
   const textData = CriarElemento({tipoElemento: 'span', conteudo: '13/08', classes: ['text-data-lista']})
@@ -80,15 +82,22 @@ const Despesas = () => {
   
   const listarDashboard = () => {
     const container = document.querySelector(".container-data-conta");
-    dashBoard.map(item => {
+    state.dashBoard.map(item => {
       const dashBoardElement = dashboardItem(item);
       container.appendChild(dashBoardElement);
     });
   };  
-
   listarDashboard();
 };
 
+const somarContas = () =>{
+  let valor = 0;
+  state.dashBoard.map(item =>{
+    console.log(item.valor)
+    valor = valor + item.valor;
+  })
+  return valor;
+}
 
 
 export default Despesas;

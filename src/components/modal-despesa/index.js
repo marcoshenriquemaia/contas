@@ -14,7 +14,7 @@ ImportCss({path: 'modal-despesa'})
 
 
 const ModalDespesa = {
-  build: ({ valorDiscador, carteira, botaoAdd, dashBoard }) => {
+  build: ({ valorDiscador, carteira, botaoAdd}) => {
     const containerDespesa = CriarElemento({ tipoElemento: 'section', classes: ['container-despesa'] });
     const cabecalho = Cabecalho.build();
     const boxTotal = BoxTotalDespesa.build({ valorDiscador });
@@ -46,6 +46,8 @@ const ModalDespesa = {
       if ($categoria.textContent === 'Categoria') {avisoPreecherCategoria({boxCarteiraAdd}); return;}
       const valores = atribuiValores();
       criaDashBoard(valores);
+      subtrairDespesa({valorSubtrair: valorDiscador});
+      console.log('valor discador:', valorDiscador);
       Despesas()
     })
 
@@ -57,7 +59,7 @@ const ModalDespesa = {
   }
 };
 
-const avisoPreecherCategoria =({boxCarteiraAdd}) =>{
+const avisoPreecherCategoria = ({boxCarteiraAdd}) =>{
   boxCarteiraAdd.classList.add('aviso-categoria');
   setTimeout(()=>{boxCarteiraAdd.classList.remove('aviso-categoria')}, 500)
 }
@@ -73,7 +75,7 @@ const atribuiValores = () =>{
   const $obs = document.querySelector('.obs');
   const $campoParcelas = document.querySelector('.campo-parcelas');
   
-  const valorDespesa = parseInt($valorTotal.textContent.replace(/[^0-9]/g,''));
+  const valorDespesa = parseFloat($valorTotal.textContent.replace(/[^0-9]/g,''));
   const nomeCarteira = $nomeCarteira.textContent;
   const nomePessoaCarteira = $nomePessoaCarteira.textContent;
   const categoriaPrincipal = $categoria.textContent;
@@ -115,8 +117,17 @@ const criaDashBoard = ({valor, carteira, categoria, tags, data, obs, quantidadeP
     obs,
     quantidadeParcelas
   }
-  dashBoard.push(dashBoardItem);
-  console.log(dashBoard);
+  state.dashBoard.push(dashBoardItem);
+}
+
+const subtrairDespesa = ({valorSubtrair}) =>{
+  const carteiraBox = document.querySelector('.box-carteira')
+  state.carteiras.map(carteira =>{
+    const { _id } = carteira;
+    if (_id == carteiraBox.getAttribute('ElementId')){
+      carteira.valor = (carteira.valor - parseFloat(valorSubtrair.replace(/[^0-9]/g,''))).toFixed(2); 
+    }
+  })
 }
 
 export default ModalDespesa;

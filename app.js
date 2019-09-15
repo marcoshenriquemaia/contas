@@ -55,7 +55,7 @@ const dashBoardItem = {
   createdAt: new Date()
 };
 
+const rodape = Rodape.build({valorDiscador, carteira, dashBoard: state.dashBoard});
 
-
-container.onload = CriaHome();
-container.onload = Rodape({valorDiscador, carteira, dashBoard});
+container.onload = CriaHome.build({valorDiscador, carteira, dashBoard: state.dashBoard});
+container.appendChild(rodape);

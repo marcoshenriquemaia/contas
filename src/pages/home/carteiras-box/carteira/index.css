@@ -1,5 +1,40 @@
 .carteira{
-    width: 95%;
-    height: 5em;
-    background-color: aqua;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 90%;
+    min-height: 4em;
+    height: 4em;
+}
+.titulo-wrapper{    
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-valor-carteira-wrapper{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(6px);
+}
+
+.icone-carteira-box{
+    transform: translateX(-.9em);
+}
+.carteira-titulo{
+    font-weight: 800;   
+    margin-bottom: .5em;
+}
+
+.carteira-valor{
+    display: flex;
+    align-items: center;
+    max-width: 3em;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    color: var(--primary);
+    word-wrap: break-word;
+    text-align: center;
 }

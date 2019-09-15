@@ -12,9 +12,27 @@
   <body>
     <section class="container"></section> 
     <script> 
-    var dashBoard = [];
+    const carteira1 = {
+      _id: Math.random() * 99,
+      titulo: 'Itau',
+      nomePessoa: 'Marcos',
+      valor: (Math.random() * 1000).toFixed(2)
+    }
+    const carteira2 = {
+      _id: Math.random() * 99,
+      titulo: 'Nubank',
+      nomePessoa: 'Raul',
+      valor: (Math.random() * 1000).toFixed(2)
+    }
+    const carteira3 = {
+      _id: Math.random() * 99,
+      titulo: 'Bradesco',
+      nomePessoa: 'Sabrina',
+      valor: (Math.random() * 1000).toFixed(2)
+    }
     var state = {
-      dashBoard: [],
+      carteiras: [carteira1, carteira2, carteira3],
+      dashBoard: []
     }
     </script>
     <script src="https://kit.fontawesome.com/757223f72a.js"></script>

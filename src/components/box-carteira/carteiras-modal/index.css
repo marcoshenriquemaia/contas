@@ -1,0 +1,27 @@
+.modal-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}
+
+.modal-carteiras{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-40%);
+    top: 20%;
+    width: 95%;
+    height: 40%;
+    background-color: #fff;
+    border-radius: 1em;
+    border: 1px solid var(--shadow);
+    box-shadow: 3px 3px 3px var(--shadow);
+    overflow-Y: scroll;
+}

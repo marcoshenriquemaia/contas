@@ -12,7 +12,6 @@ const CriarCadastroCategorias = () => {
   const boxCategorias = BoxCategorias.build();
   const containerCadastroCategorias = CriarElemento({tipoElemento: 'div', classes: ['container-cadastro-categorias']})
 
-
   cadastroCategorias.appendChild(boxCategorias);
   containerCadastroCategorias.appendChild(cadastroCategorias);
   containerDespesa && containerDespesa.appendChild(containerCadastroCategorias);
@@ -33,7 +32,7 @@ const CriarCadastroCategorias = () => {
   containerCadastroCategorias.addEventListener('click', e =>{
     if(e.target.classList[0] != 'container-cadastro-categorias') return;
     containerDespesa.removeChild(containerCadastroCategorias);
-  })
+  }) 
 }
 
 const clickCategoria = () => {

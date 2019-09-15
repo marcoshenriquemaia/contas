@@ -4,25 +4,32 @@ import CriarBoxIcone from "../../../../components/shared/criar-box-icone/index.j
 
 ImportCss({page: 'home/carteiras-box/carteira'})
 
-const Carteira = () =>{
-    const carteira = CriarElemento({tipoElemento: 'div', classes: ['carteira']});
+const Carteira = {
+    build: (carteira) =>{
+    const { tituloCarteira, nomePessoaCarteira, valorCarteira } = carteira;
+    const carteiraBox = CriarElemento({tipoElemento: 'div', classes: ['carteira']});
     const iconeBox = CriarBoxIcone('var(--primary)', 'icone-carteira-box');
-    const icone = CriarElemento({tipoElemento: 'i', icone: 'carteira', classes: ['icones']});
+    const icone = CriarElemento({tipoElemento: 'i', icone: 'carteira', classes: ['icones', 'icone-branco']});
+    const textValorWrapper = CriarElemento({tipoElemento: 'div', classes: ['text-valor-carteira-wrapper']})
     const tituloWrapper = CriarElemento({tipoElemento: 'div', classes: ['titulo-wrapper']});
-    const titulo = CriarElemento({tipoElemento: 'h1', classes: ['carteira-titulo']});
-    const nomePessoa = CriarElemento({tipoElemento: 'h2', classes: ['nome-pessoa'], conteudo: 'Marcos'});
-    const valor = CriarElemento({tipoElemento: 'span', classes: ['carteira-valor'], conteudo: 'R$ 100,000,00'});
+    const titulo = CriarElemento({tipoElemento: 'h1', classes: ['carteira-titulo'], conteudo: tituloCarteira});
+    const nomePessoa = CriarElemento({tipoElemento: 'h2', classes: ['nome-pessoa'], conteudo: nomePessoaCarteira});
+    const valor = CriarElemento({tipoElemento: 'span', classes: ['carteira-valor'], conteudo: `R$ ${valorCarteira}`});
 
-    carteira.appendChild(iconeBox);
-    carteira.appendChild(tituloWrapper);
-    carteira.appendChild(valor);
-
+    carteiraBox.appendChild(iconeBox);
+    carteiraBox.appendChild(textValorWrapper);
     iconeBox.appendChild(icone);
-
+    textValorWrapper.appendChild(tituloWrapper);
+    textValorWrapper.appendChild(valor);
     tituloWrapper.appendChild(titulo);
     tituloWrapper.appendChild(nomePessoa);
 
-    return carteira;
+    return carteiraBox;
+    },
+    remove: () =>{
+        const carteira = document.querySelector('.carteira');
+        carteira.remove();
+    }
 }
 
 export default Carteira;

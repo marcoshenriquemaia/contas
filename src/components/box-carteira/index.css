@@ -43,3 +43,11 @@
 .box-carteira-on{
     border: 1px solid var(--primary);
 }
+
+.carteira-icone{
+    background-color: #fff;
+    text-align: center; 
+    padding-top: 5px;
+    border-radius: 100em;
+    justify-self: flex-end;
+}
