@@ -1,6 +1,7 @@
 import CriarIcone from "../../shared/criar-icone/index.js";
 import BoxTotalConta from "./box-total-conta/index.js";
 import ImportCss from "../../../utils/import-css/index.js";
+import CriaHome from "../../../pages/home/index.js";
 
 ImportCss({ path: 'modal-despesa/box-valor-despesa' });
 
@@ -27,6 +28,7 @@ const clickExcluirTotal = () => {
     const container = document.querySelector(".container");
     const containerDespesa = document.querySelector(".container-despesa");
     container.removeChild(containerDespesa);
+    CriaHome.build();
 };
 
 
