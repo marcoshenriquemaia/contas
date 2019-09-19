@@ -26,7 +26,7 @@ const Rodape = {
       classes: ["wrap-div-right"]
     });
     const imagemAdd = CriarIcone("add (2).png", "", "imagem-add");
-    const icone1 = CriarElemento({ tipoElemento: "i", icone: ["home"] });
+    const botaoHome = CriarElemento({ tipoElemento: "i", icone: ["home"] });
     const icone2 = CriarElemento({
       tipoElemento: "i",
       icone: ["estatisticas"]
@@ -41,7 +41,7 @@ const Rodape = {
     boxRodape.appendChild(botaoAdd);
     boxRodape.appendChild(wrapBoxDireita);
     botaoAdd.appendChild(imagemAdd);
-    wrapBoxEsquerda.appendChild(icone1);
+    wrapBoxEsquerda.appendChild(botaoHome);
     wrapBoxEsquerda.appendChild(icone2);
     wrapBoxDireita.appendChild(icone3);
     wrapBoxDireita.appendChild(icone4);
@@ -63,15 +63,16 @@ const Rodape = {
       container.appendChild(discador);
     });
 
-    icone1.addEventListener("click", () => {
+    botaoHome.addEventListener("click", () => {
       const containerDiscador = document.querySelector(".container-discador");
       const containerDespesa = document.querySelector(".container-despesa");
       const containerLista = document.querySelector(".container-lista");
+      const containerHome = document.querySelector('.conta-container');
 
       containerDespesa && container.removeChild(containerDespesa);
       containerDiscador && container.removeChild(containerDiscador);
       containerLista && container.removeChild(containerLista);
-      CriaHome.build();
+      !containerHome && CriaHome.build();
     });
     return boxRodape;
   },

@@ -16,7 +16,14 @@
       _id: Math.random() * 99,
       titulo: 'Itau',
       nomePessoa: 'Marcos',
-      valor: (Math.random() * 1000).toFixed(2)
+      titulares: [],
+      valor: (Math.random() * 1000).toFixed(2),
+      moeda: 'Real',
+      contas: [{
+        valor: null,
+      }],
+      rendimento: 'poupanca',
+      valorPlano: null,
     }
     const carteira2 = {
       _id: Math.random() * 99,

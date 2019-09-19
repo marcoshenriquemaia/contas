@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* justify-content: center; */
     background-color: #fff;
     position: absolute;
     width: 100%;
@@ -10,8 +11,6 @@
 }
 
 .campo-valores-discador {
-    top: 0;
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +19,7 @@
     background-color: var(--secundary);
     font-size: 2em;
     color: red;
-    margin-top: 4rem;
+    margin-top: 14.5%;
 }
 
 .botao-discador {
@@ -32,4 +31,9 @@
     border-radius: 2rem;
     font-size: 1.6em;
     margin-top: 5%;
+}
+
+@media (max-height: 568px){
+    .campo-valores-discador{
+    }
 }

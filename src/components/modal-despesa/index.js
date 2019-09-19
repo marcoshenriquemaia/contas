@@ -9,6 +9,7 @@ import CriarElemento from "../shared/criar-elemento/index.js";
 import Cabecalho from "../cabecalho/index.js";
 import BoxTotalDespesa from "./box-valor-despesa/index.js";
 import ImportCss from "../../utils/import-css/index.js";
+import store from "../../domain/store/index.js";
 
 ImportCss({path: 'modal-despesa'})
 
@@ -128,6 +129,7 @@ const subtrairDespesa = ({valorSubtrair}) =>{
       carteira.valor = (carteira.valor - parseFloat(valorSubtrair.replace(/[^0-9]/g,''))).toFixed(2); 
     }
   })
+  console.log('testeStore', store.getTitulo({id: 55}))
 }
 
 export default ModalDespesa;

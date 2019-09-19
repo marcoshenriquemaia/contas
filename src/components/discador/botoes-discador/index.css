@@ -25,11 +25,88 @@
     flex-wrap: wrap;
     width: 95%;
     height: 50%;
-    margin-top: 12.5rem;
 }
 
 .backspace {
     margin: 1.9em;
     width: 2em;
     height: 2em;
+}
+@media (max-width: 414px){
+    .numero-discador{
+        width: 4rem;
+        height: 4rem;
+        margin: 1.3rem;
+    }
+    .numero-discador0{
+        margin-left: 2.4em;
+    }
+    .discador{
+        height: 53%;
+    }
+}
+
+@media (max-height: 667px){
+    .numero-discador, .numero-discador0{
+        width: 3.3rem;
+        height: 3.3rem;
+        font-size: 2em;
+    }
+    .numero-discador0{
+        margin-left: 3.5em;
+    }
+    .discador{
+        height: 53%;
+    }
+}
+
+@media (max-height: 640px){
+    .numero-discador{
+        width: 3.3rem;
+        height: 3.3rem;
+        font-size: 2em;
+        margin: 1.1rem;
+    }
+    .numero-discador0{
+        margin: 1rem;
+        margin-left: 3.4em;
+        transform: translateX(-.4em);
+    }
+    .discador{
+        height: 53%;
+    }
+    .backspace {
+        margin: 1em;
+        margin-top: .5em;
+        margin-left: 1em;
+        margin-right: 1em;
+        width: 2em;
+        height: 2em;
+    }
+}
+
+@media (max-height: 568px){
+    .numero-discador{
+        width: 3rem;
+        height: 3rem;
+        font-size: 2em;
+        margin: 1rem;
+    }
+    .numero-discador0{
+        margin: 1rem;
+        margin-left: 3.4em;
+        margin-top: .3em;
+        transform: translateX(-.4em);
+    }
+    .discador{
+        height: 53%;
+    }
+    .backspace {
+        margin: 1em;
+        margin-top: .5em;
+        margin-left: .5em;
+        margin-right: 1.5em;
+        width: 2em;
+        height: 2em;
+    }
 }
